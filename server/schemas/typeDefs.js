@@ -19,3 +19,4 @@ const typeDefs = gql`
         reps: Number
     }
 `
+module.exports = typeDefs;
