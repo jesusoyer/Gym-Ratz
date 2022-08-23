@@ -18,10 +18,8 @@ const typeDefs = gql`
         sets: Number
         reps: Number
     }
-<<<<<<< HEAD
-`
-module.exports = typeDefs;
-=======
+
+
 
     type Query {
         users: [User]
@@ -37,4 +35,5 @@ module.exports = typeDefs;
         addExercise(workoutId: ID!, title: String!, sets: Number!, reps: Number!): Workout
     }
 `
->>>>>>> 247c0103737113503ac5d691393762c97dff4bde
+
+module.exports = typeDefs;
