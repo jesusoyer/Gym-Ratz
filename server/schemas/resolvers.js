@@ -51,10 +51,10 @@ Mutation: {
 
 
 
-addWorkout: async (parent, { title, exercise, reps, sets, weight,other}, context) => {
+addWorkout: async (parent, { title, exercise, reps, sets, weight,}, context) => {
     if (context.user) {
       const workout = await Workout.create({
-        title: context.user.username,
+        title,
         exercise,
         reps,
         sets,
