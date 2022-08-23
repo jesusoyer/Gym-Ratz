@@ -18,4 +18,18 @@ const typeDefs = gql`
         sets: Number
         reps: Number
     }
+
+    type Query {
+        users: [User]
+        user:(userId: ID!): User
+        workouts: [Workout]
+        workout(workoutId: ID!): Workout
+    }
+
+    type Mutation {
+        addUser(username: String!, email: String!, password: String!): Auth
+        login(email: String!, password: String!): Auth
+        addWorkout(title: String!, exercises: [Exercise]!)
+        addExercise(workoutId: ID!, title: String!, sets: Number!, reps: Number!): Workout
+    }
 `
