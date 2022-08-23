@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose')
+const { Schema, model } = require('mongoose')
 const bcrypt = require('bcrypt');
 const workoutSchema = require('./Workout')
 
@@ -22,15 +22,15 @@ const userSchema = new Schema(
             minlength: 8,
             maxLength: 32,
         },
-        workouts: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Workout',
-            },
-        ],
+        // workouts: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'Workout',
+        //     },
+        // ],
 
         // user can save workouts; import workout schema; set to an array of workout data
-        saveWorkouts: [workoutSchema],
+        // saveWorkouts: [workoutSchema],
     },
     {
         toJSON: {
