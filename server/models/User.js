@@ -1,5 +1,5 @@
 const { Schema } = require('mongoose')
-
+const bcrypt = require('bcrypt');
 const workoutSchema = require('./Workout')
 
 // model for user
@@ -19,6 +19,8 @@ const userSchema = new Schema(
         password: {
             type: String,
             required: true,
+            minlength: 8,
+            maxLength: 32,
         },
 
         // user can save workouts; import workout schema; set to an array of workout data
@@ -32,6 +34,18 @@ const userSchema = new Schema(
 );
 
 // need to hash the password with bcrypt?
+userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+  
+  userSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+  };
 
 const User = model('User', userSchema);
 
