@@ -20,6 +20,12 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
+        workouts: [
+            {
+                type: workoutSchema,
+                ref: 'Workout',
+            },
+        ],
 
         // user can save workouts; import workout schema; set to an array of workout data
         saveWorkouts: [workoutSchema],
