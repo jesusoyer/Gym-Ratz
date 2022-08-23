@@ -3,7 +3,7 @@
 
 
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Workout } = require('../models');
 const { signToken } = require('../utils/auth');
 
 console.log("you are in resolvers")
@@ -49,29 +49,29 @@ Mutation: {
     },
 
 
-},
 
-addWorkout: async (parent, { title, exercise, reps, sets, weight, other }, context) => {
+
+addWorkout: async (parent, { title, exercise, reps, sets, weight,other}, context) => {
     if (context.user) {
       const workout = await Workout.create({
-        title,
+        title: context.user.username,
         exercise,
         reps,
         sets,
         weight,
-        other
+        other,
       });
 
       await User.findOneAndUpdate(
         { _id: context.user._id },
-        { $addToSet: { thoughts: thought._id } }
+        { $addToSet: { workouts: workout._id } }
       );
 
-      return thought;
+      return workout;
     }
     throw new AuthenticationError('You need to be logged in!');
   },
-
+},
 };
 
 
