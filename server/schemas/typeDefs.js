@@ -10,7 +10,14 @@ const typeDefs = gql`
         password: String
         
     }
+    type Workout {
+        title: String
+        sets: Int
+        reps: Int
+        weight: Int
+        other: String
 
+    }
 
     type Auth {
         token: ID!
@@ -37,11 +44,15 @@ module.exports = typeDefs;
 // workouts: [Workout]
 // workout(workoutId: ID!): Workout
 
-   // type Workout {
-    //     _id: ID
-    //     title: String
-    //     exercises: [Exercise]!
-    // }
+//    type Workout {
+//         title: String
+//         sets: Number
+//         reps: Number
+//         weight: Number
+//         other: String
+
+//         // exercises: [Exercise]!
+//     }
 
     // type Exercise {
     //     _id: ID

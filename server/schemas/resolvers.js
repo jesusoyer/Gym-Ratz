@@ -11,19 +11,17 @@ console.log("you are in resolvers")
 const resolvers = {
     
     Query: {
-      me: async (parent, args, context) => {
-        if (context.user) {
-          const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
-          return userData;
-        }
-        throw new AuthenticationError('You need to be logged in!');
+        me: async (parent, args, context) => {
+            if (context.user) {
+              return User.findOne({ _id: context.user._id }).populate('workouts');
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
+
+          users: async () => {
+            return User.find().populate('workouts');
+          },
       },
-      },
-
-
-
-
-
 
 
 Mutation: {
@@ -49,7 +47,31 @@ Mutation: {
 
       return { token, user };
     },
+
+
 },
+
+addWorkout: async (parent, { title, exercise, reps, sets, weight, other }, context) => {
+    if (context.user) {
+      const workout = await Workout.create({
+        title,
+        exercise,
+        reps,
+        sets,
+        weight,
+        other
+      });
+
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { thoughts: thought._id } }
+      );
+
+      return thought;
+    }
+    throw new AuthenticationError('You need to be logged in!');
+  },
+
 };
 
 
