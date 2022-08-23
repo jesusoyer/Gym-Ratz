@@ -52,9 +52,9 @@ Mutation: {
 
 
 addWorkout: async (parent, { title, exercise, reps, sets, weight,other}, context) => {
-    if (context.user) {
+    // if (context.user) {
       const workout = await Workout.create({
-        title: context.user.username,
+        title,
         exercise,
         reps,
         sets,
@@ -63,13 +63,13 @@ addWorkout: async (parent, { title, exercise, reps, sets, weight,other}, context
       });
 
       await User.findOneAndUpdate(
-        { _id: context.user._id },
+        // { _id: context.user._id },
         { $addToSet: { workouts: workout._id } }
       );
 
       return workout;
-    }
-    throw new AuthenticationError('You need to be logged in!');
+    // }
+    // throw new AuthenticationError('You need to be logged in!');
   },
 },
 };
