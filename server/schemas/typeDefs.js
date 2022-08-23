@@ -18,4 +18,11 @@ const typeDefs = gql`
         sets: Number
         reps: Number
     }
+
+    type Query {
+        users: [User]
+        user:(userId: ID!): User
+        workouts: [Workout]
+        workout(workoutId: ID!): Workout
+    }
 `
