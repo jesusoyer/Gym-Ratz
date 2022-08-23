@@ -22,6 +22,12 @@ const userSchema = new Schema(
             minlength: 8,
             maxLength: 32,
         },
+        workouts: [
+            {
+                type: workoutSchema,
+                ref: 'Workout',
+            },
+        ],
 
         // user can save workouts; import workout schema; set to an array of workout data
         saveWorkouts: [workoutSchema],

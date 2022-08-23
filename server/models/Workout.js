@@ -11,6 +11,7 @@ const workoutSchema = new Schema(
         exercise: [
             {
             type: exerciseSchema,
+            ref: 'Exercise',
             required: true
             },
         ],
