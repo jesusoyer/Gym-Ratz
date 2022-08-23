@@ -10,7 +10,7 @@ const workoutSchema = new Schema(
         },
         exercise: [
             {
-            type: exerciseSchema,
+            type: Schema.Types.ObjectId,
             ref: 'Exercise',
             required: true
             },

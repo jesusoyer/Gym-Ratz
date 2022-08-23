@@ -24,7 +24,7 @@ const userSchema = new Schema(
         },
         workouts: [
             {
-                type: workoutSchema,
+                type: Schema.Types.ObjectId,
                 ref: 'Workout',
             },
         ],
