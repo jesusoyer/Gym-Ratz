@@ -11,26 +11,38 @@ console.log("you are in resolvers")
 const resolvers = {
     
     Query: {
-        me: async (parent, args, context) => {
-            if (context.user) {
-              return User.findOne({ _id: context.user._id }).populate('workouts');
-            }
-            throw new AuthenticationError('You need to be logged in!');
-          },
+       
+        user: async (parent, { username }) => {
+          return User.findOne({ username }).populate('workouts');
+        },
 
           users: async () => {
             return User.find().populate('workouts');
+          },
+          workouts: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Workout.find(params).sort({ createdAt: -1 });
+          },
+          workouts: async (parent, { workoutId }) => {
+            return Workout.findOne({ _id: workoutId });
+          },
+
+          me: async (parent, args, context) => {
+            if (context.user) {
+              return User.findOne({ _id: context.user._id }).populate('thoughts');
+            }
+            throw new AuthenticationError('You need to be logged in!');
           },
       },
 
 
 Mutation: {
-    addUser: async (parent, { username, email, password }, context) => {
+    addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
-      console.log(context.user)
       return { token, user };
     },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -46,38 +58,29 @@ Mutation: {
 
       const token = signToken(user);
 
-      console.log(context.user)
+      
 
       return { token, user };
     },
 
 
+    addWorkout: async (parent, { title, exercise, reps, sets, weight,other, workoutAuthor}) => {
+      const workout = await Workout.create({ title, exercise, reps, sets, weight,other, workoutAuthor});
 
-
-addWorkout: async (parent, { title, exercise, reps, sets, weight,other}, context) => {
-    // if (context.user) {
-      const workout = await Workout.create({
-        title,
-        exercise,
-        reps,
-        sets,
-        weight,
-        other,
-      });
-
-      console.log(context.user);
-
-      // await User.findOneAndUpdate(
-      //   // { _id: context.user._id },
-      //   { $addToSet: { workouts: workout._id } }
-      // );
+      await User.findOneAndUpdate(
+        { username: workoutAuthor },
+        { $addToSet: { workouts: workout._id } }
+      );
 
       return workout;
-    // }
-    // throw new AuthenticationError('You need to be logged in!');
-  },
-},
+    
+      }
+    }
+
 };
+
+
+
 
 
 module.exports = resolvers;

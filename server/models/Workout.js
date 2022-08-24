@@ -4,13 +4,20 @@ const { Schema, model } = require('mongoose')
 
 const workoutSchema = new Schema(
     {
+        workoutAuthor:{
+            type: String,
+            required: true,
+            trim: true,
+        },
         title: {
             type: String,
             required: true,
+            
         },
         exercise: {
             type: String,
             required: true,
+            trim: true,
         },
         sets: {
             type: Number,

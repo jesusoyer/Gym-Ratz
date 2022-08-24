@@ -8,9 +8,13 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
+        workouts: [Workout]!
+
         
     }
     type Workout {
+        _id: ID
+        workoutAuthor: String
         title: String
         sets: Int
         reps: Int
@@ -22,22 +26,26 @@ const typeDefs = gql`
     type Auth {
         token: ID!
         user: User
+    
       }
 
       type Query {
         users: [User]
         user(username: String!): User
+
         workouts(username: String): [Workout]
         workout(workoutId: ID!): Workout
 
         me: User
+        
     }
 
 
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        addWorkout(title: String!,exercise: String!, reps: Int!, sets: Int!, weight: Int!, other: String ): Workout
+
+        addWorkout(title: String!,workoutAuthor: String!, exercise: String!, reps: Int!, sets: Int!, weight: Int!, other: String): Workout
 
     }
 `;
