@@ -15,13 +15,16 @@ const typeDefs = gql`
     type Workout {
         _id: ID
         workoutAuthor: String
+       exercise: [Exercise]!
+    }
+       
+    type Exercise {
         title: String
         sets: Int
         reps: Int
         weight: Int
         other: String
-
-    }
+      }
 
     type Auth {
         token: ID!
