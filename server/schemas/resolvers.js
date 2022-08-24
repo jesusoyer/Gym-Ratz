@@ -75,7 +75,15 @@ Mutation: {
       return workout;
     
       }
-    }
+    ,
+
+    removeWorkout: async (parent, { workoutId }) => {
+      return Workout.findOneAndDelete({ _id: workoutId });
+    },
+
+},
+
+
 
 };
 
