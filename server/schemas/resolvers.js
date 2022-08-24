@@ -28,9 +28,10 @@ const resolvers = {
 
 
 Mutation: {
-    addUser: async (parent, { username, email, password }) => {
+    addUser: async (parent, { username, email, password }, context) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
+      console.log(context.user)
       return { token, user };
     },
 
@@ -48,6 +49,8 @@ Mutation: {
       }
 
       const token = signToken(user);
+
+      console.log(context.user)
 
       return { token, user };
     },
@@ -67,10 +70,19 @@ addWorkout: async (parent, { title, exercise, reps, sets, weight,other}, context
         other,
       });
 
+<<<<<<< HEAD
       await User.findOneAndUpdate(
         { _id: context.user._id },
         { $addToSet: { workouts: workout._id } }
       );
+=======
+      console.log(context.user);
+
+      // await User.findOneAndUpdate(
+      //   // { _id: context.user._id },
+      //   { $addToSet: { workouts: workout._id } }
+      // );
+>>>>>>> 24b9940d6e9fec609ae5b91ba2d301441553830b
 
       return workout;
     // }
