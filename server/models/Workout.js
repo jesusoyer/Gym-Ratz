@@ -14,7 +14,7 @@ const workoutSchema = new Schema(
             required: true,
             
         },
-        exercise: [
+        exercises: [
         {
         title: {
             type: String,
