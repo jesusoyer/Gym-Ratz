@@ -1,25 +1,43 @@
 import React from "react"; 
-import logo from './logo.svg';
+import logo from './images/rat.png';
 import './App.css';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+//Pages Imported 
+import Home from './pages/Home';
+import LoginSignUp from './pages/LoginSignup';
+import Profile from './pages/Profile';
+import AddWorkout from "./pages/AddWorkout";
+
+//Components Imported
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return ( 
+
+// ApolloProvider client goes here 
+
+  <Router>
+  {/* header/nav is static */}
+  <Header/>
+  <img src={logo} className="App-logo" alt="logo" />
+  {/* dynamic pages */}
+  <Routes> 
+    <Route path="/" element={<Home/>}/>
+    <Route path="/login" element={<LoginSignUp/>}/>
+    {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
+    <Route path="/register" element={<LoginSignUp/>}/>
+    <Route path="/addworkout" element={<AddWorkout/>}/>
+    <Route path="/profile" element={<Profile/>}/>
+  </Routes>
+  
+  {/* footer is static  */}
+  <Footer/>
+  </Router>
+
   );
 }
 
