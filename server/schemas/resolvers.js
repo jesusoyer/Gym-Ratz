@@ -64,18 +64,30 @@ Mutation: {
     },
 
 
-    addWorkout: async (parent, { title, exercise, reps, sets, weight,other, workoutAuthor}) => {
-      const workout = await Workout.create({ title, exercise, reps, sets, weight,other, workoutAuthor});
-
-      await User.findOneAndUpdate(
-        { username: workoutAuthor },
-        { $addToSet: { workouts: workout._id } }
+    addWorkout: async (parent, {workout}) => {
+      const newWorkout = await Workout.create(workout);
+      console.log(workout)
+       await User.findOneAndUpdate(
+       { username: workout.workoutAuthor },
+       { $addToSet: { workouts: newWorkout } }
       );
 
-      return workout;
+      return newWorkout;
     
       }
     ,
+
+    // addExercise: async (parent, { exercises, workoutId}) => {
+
+    //   return Workout.findOneAndUpdate(
+    //     { _id: workoutId },
+    //     { $addToSet: { exercises: { title, sets, reps, weight } } },
+    //     {
+    //       new: true
+    //     }
+    //   );
+    //   },
+    
 
     removeWorkout: async (parent, { workoutId }) => {
       return Workout.findOneAndDelete({ _id: workoutId });
