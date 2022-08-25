@@ -58,11 +58,9 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
 
-<<<<<<< HEAD
-        addWorkout(title: String!, workoutAuthor: String! ): Workout
-=======
+    
         addWorkout(workout: WorkoutInput!): Workout
->>>>>>> 9f26e212274dd170a6b78225005558f4341fb737
+
 
         removeWorkout(workoutId: ID!): Workout
 
