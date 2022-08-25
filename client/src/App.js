@@ -30,7 +30,7 @@ function App() {
     <Route path="/login" element={<LoginSignUp/>}/>
     {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
     <Route path="/register" element={<LoginSignUp/>}/>
-    <Route path="/addworkout" element={<AddWorkout/>}/>
+    <Route path="/workout" element={<AddWorkout/>}/>
     <Route path="/profile" element={<Profile/>}/>
   </Routes>
   
