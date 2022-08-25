@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.navLinks a {
+  margin: 10px;
+}
+
+.logo {
+  display: flex;
+  /* align-items: center; */
+}
+
+.logo h1 {
+  padding-right: 15px;
+}

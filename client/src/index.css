@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+  /* Global Layout */
+  * {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+  }
