@@ -1,41 +1,61 @@
-import decode from 'jwt-decode';
+import { gql } from '@apollo/client';
 
-class AuthService {
-  getProfile() {
-    return decode(this.getToken());
-  }
-
-  loggedIn() {
-    const token = this.getToken();
-    // If there is a token and it's not expired, return `true`
-    return token && !this.isTokenExpired(token) ? true : false;
-  }
-
-  isTokenExpired(token) {
-    // Decode the token to get its expiration time that was set by the server
-    const decoded = decode(token);
-    // If the expiration time is less than the current time (in seconds), the token is expired and we return `true`
-    if (decoded.exp < Date.now() / 1000) {
-      localStorage.removeItem('id_token');
-      return true;
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      thoughts {
+        _id
+        thoughtText
+        createdAt
+      }
     }
-    // If token hasn't passed its expiration time, return `false`
-    return false;
   }
+`;
 
-  getToken() {
-    return localStorage.getItem('id_token');
-  }
+// export const QUERY_THOUGHTS = gql`
+//   query getThoughts {
+//     thoughts {
+//       _id
+//       thoughtText
+//       thoughtAuthor
+//       createdAt
+//     }
+//   }
+// `;
 
-  login(idToken) {
-    localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
-  }
+// export const QUERY_SINGLE_THOUGHT = gql`
+//   query getSingleThought($thoughtId: ID!) {
+//     thought(thoughtId: $thoughtId) {
+//       _id
+//       thoughtText
+//       thoughtAuthor
+//       createdAt
+//       comments {
+//         _id
+//         commentText
+//         commentAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `;
 
-  logout() {
-    localStorage.removeItem('id_token');
-    window.location.reload();
-  }
-}
-
-export default new AuthService();
+// export const QUERY_ME = gql`
+//   query me {
+//     me {
+//       _id
+//       username
+//       email
+//       thoughts {
+//         _id
+//         thoughtText
+//         thoughtAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `
+;
