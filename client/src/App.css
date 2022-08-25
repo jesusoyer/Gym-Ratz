@@ -45,11 +45,18 @@
   margin:auto;
 }
 
-button {
+.btnWhite {
   border: 2px solid rgb(255, 255, 255);
   padding: 10px;
   background-color: transparent;
   color:white;
+}
+
+button {
+  border: 2px solid black;
+  padding: 10px;
+  background-color: transparent;
+  width: 100%;
 }
 
 /* Navigation Styling */
@@ -129,15 +136,6 @@ nav {
   width: 65%;
 }
 
-/* .videoHeader {
-  position:fixed;
-  z-index: -1;
-  width: 20%;
-  top: 50%;
-  left: 50%;
-  
- } */
-
 .videoHeader2 {
   position:relative;
   z-index: -1;
@@ -178,6 +176,40 @@ footer img {
 
 .footerItem {
   margin: 10px;
+}
+
+/* Login | Register Form Styling  */
+
+.mainFormContainer {
+  display: flex;
+  justify-content: space-evenly;
+  height: 60vh;
+}
+
+.videoHeader {
+  z-index: -1;
+  margin-right: 10px;
+   margin-left: 10px;
+ }
+
+.loginForm, .registerForm {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;;
+}
+
+.loginForm h2, .registerForm h2 {
+  margin-bottom:20px;
+}
+
+.form-input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 /* mobile  */

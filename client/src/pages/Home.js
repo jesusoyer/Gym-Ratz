@@ -26,7 +26,7 @@ return (
 
 <div className="subHeaderBox contentHeader"> 
 <p className="contentItems">  Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
-<button className="contentItems"> sign up now </button> <a className="learnMoreHeader" href="#usage"> see our model </a>
+<button className="contentItems btnWhite"> sign up now </button> <a className="learnMoreHeader" href="#usage"> see our model </a>
 
 </div>
 </div>
