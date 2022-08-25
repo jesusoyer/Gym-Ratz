@@ -22,5 +22,39 @@ export const ADD_USER = gql`
             }
         }
    }
+`;
 
-`
+export const ADD_WORKOUT = gql`
+   mutation addWorkout($workoutAuthor: String!, $title: String!) {
+        addWorkout(workoutAuthor: $workoutAuthor, title: $title){
+            _id
+            workoutAuthor
+            title
+            exercises {
+                -id
+                title
+            }
+            other
+        }
+   }
+
+`;
+
+export const ADD_EXERCISE = gql`
+   mutation addExercise($workoutId: ID!, $title: String!) {
+        addExercise(workoutId: $workoutId, title: $title) {
+            _id
+            workAuthor
+            title
+            exercises {
+                title
+                sets
+                reps
+                weight
+            }
+            other
+        }
+   }
+
+`;
+
