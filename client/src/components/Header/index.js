@@ -6,10 +6,8 @@ const Header = () => {
     return (
 //need to add conditional for authentication (pending connection)
     <nav className="nav">
-        <div className="logo"> 
-        <h1> Gym Ratz </h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        </div>
+        <Link className="logo" to="/"> <h1> Gym Ratz </h1>
+        <img src={logo} className="App-logo" alt="logo" /> </Link>
         <div className="navLinks"> 
         <Link to="login"> login </Link>
         <Link to="login"> register </Link>
