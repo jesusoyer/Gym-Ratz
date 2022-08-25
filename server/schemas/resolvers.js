@@ -64,12 +64,14 @@ Mutation: {
     },
 
 
+
     addWorkout: async (parent, {workout}) => {
       const newWorkout = await Workout.create(workout);
       console.log(workout)
        await User.findOneAndUpdate(
        { username: workout.workoutAuthor },
        { $addToSet: { workouts: newWorkout } }
+
       );
 
       return newWorkout;
