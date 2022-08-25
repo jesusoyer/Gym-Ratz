@@ -56,3 +56,18 @@ nav {
 .logo h1 {
   padding-right: 15px;
 }
+
+/* Footer Styling */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer img {
+  width: 20px;
+}
+
+.footerItem {
+  margin: 10px;
+}
