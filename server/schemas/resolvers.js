@@ -64,8 +64,8 @@ Mutation: {
     },
 
 
-    addWorkout: async (parent, { title, exercise, reps, sets, weight,other, workoutAuthor}) => {
-      const workout = await Workout.create({ title, exercise, reps, sets, weight,other, workoutAuthor});
+    addWorkout: async (parent, { title, workoutAuthor}) => {
+      const workout = await Workout.create({ title, workoutAuthor});
 
       await User.findOneAndUpdate(
         { username: workoutAuthor },
