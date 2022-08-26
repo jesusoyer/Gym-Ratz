@@ -26,61 +26,23 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_WORKOUT = gql`
-   mutation addWorkout($workoutAuthor: String!, $title: String!) {
-        addWorkout(workoutAuthor: $workoutAuthor, title: $title){
+
+   mutation addWorkout($workout: WorkoutInput) {
+        addWorkout(workout: $workout){
+
             _id
             workoutAuthor
             title
             exercises {
-                -id
-                title
-            }
-            other
-        }
-   }
+                _id
 
-`;
-
-export const ADD_EXERCISE = gql`
-   mutation addExercise($workoutId: ID!, $title: String!) {
-        addExercise(workoutId: $workoutId, title: $title) {
-            _id
-            workAuthor
-            title
-            exercises {
                 title
                 sets
                 reps
                 weight
+
+                other
             }
-            other
         }
    }
-
 `;
-
-
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
-<<<<<<< HEAD
-export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
-=======
->>>>>>> 5e40a93cf9ecad9beb8adf8fad96e4809e29c1d0
