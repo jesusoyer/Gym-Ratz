@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
+<<<<<<< HEAD
   query user($username: String!) {
     user(username: $username) {
       _id
@@ -11,10 +12,34 @@ export const QUERY_USER = gql`
         workoutAuthor: String
         exercises
       }
+=======
+
+    query user($username: String!) {
+        user(username: $username) {
+            _id
+            username
+            email
+            workouts {
+                _id
+                title
+                exercises {
+                    _id
+                    title
+                    sets
+                    reps
+                    weight
+
+                    other
+                }
+
+            }
+        }
+>>>>>>> 1eaa3c35182a729d6c13993a12232eda51750092
     }
   }
 `;
 
+<<<<<<< HEAD
 // export const QUERY_WORKOUTS = gql`
 //   query getWorkouts {
 //     workouts {
@@ -25,6 +50,25 @@ export const QUERY_USER = gql`
 //     }
 //   }
 // `;
+=======
+export const QUERY_WORKOUTS = gql`
+    query getWorkouts {
+        workouts {
+            _id
+            workoutAuthor
+            title
+            exercises {
+                _id
+                title
+                sets
+                reps
+                weight
+
+                other
+            }
+        }
+    }
+>>>>>>> 1eaa3c35182a729d6c13993a12232eda51750092
 
 // export const QUERY_SINGLE_WORKOUT = gql`
 //   query getSingleWorkout($workoutId: ID!) {
@@ -34,6 +78,7 @@ export const QUERY_USER = gql`
     // workoutAuthor
     // exercises {
 
+<<<<<<< HEAD
         // title
         // sets
         // reps
@@ -43,6 +88,26 @@ export const QUERY_USER = gql`
 //     }
 //   }
 // `;
+=======
+export const QUERY_SINGLE_WORKOUT = gql`
+    query getSingleWorkout($workoutID: ID!) {
+        workout(workoutId: $workoutId) {
+            _id
+            workoutAuthor
+            title
+            exercises {
+                _id
+                title
+                sets
+                reps
+                weight
+
+                other
+            }
+
+        }
+    }
+>>>>>>> 1eaa3c35182a729d6c13993a12232eda51750092
 
 // export const QUERY_ME = gql`
 //   query me {
