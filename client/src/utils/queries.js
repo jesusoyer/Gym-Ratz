@@ -15,6 +15,41 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_WORKOUTS = gql`
+  query getWorkouts {
+    workouts {
+      _id
+      title
+      workoutAuthor
+      exercises {
+        _id
+        title
+        sets
+        reps
+        weight
+        other
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_WORKOUT = gql`
+  query getSingleWorkout($workoutId: ID!){
+    workout(workoutId: $workoutId){
+      _id
+      title
+      workoutAuthor
+      exercises {
+        _id
+        title
+        sets
+        reps
+        weight
+        other
+      }
+    }
+  }
+`;
 // export const QUERY_THOUGHTS = gql`
 //   query getThoughts {
 //     thoughts {
