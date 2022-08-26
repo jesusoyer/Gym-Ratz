@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 5vmin;
   pointer-events: none;
 }
 
@@ -36,3 +36,180 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/* Universal Pages Containers  */
+.pagesContainer {
+  max-width: 900px;
+  margin:auto;
+}
+
+.btnWhite {
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px;
+  background-color: transparent;
+  color:white;
+}
+
+button {
+  border: 2px solid black;
+  padding: 10px;
+  background-color: transparent;
+  width: 100%;
+}
+
+/* Navigation Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.navLinks a {
+  margin: 10px;
+  color: black;
+}
+
+.logo {
+  display: flex;
+  /* align-items: center; */
+  text-decoration: none;
+  color: black;
+}
+
+.logo h2 {
+  padding-right: 0px;
+}
+
+/* Home Page Styling  */
+
+.headerContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 25%;
+  /* height: 60vh; */
+}
+
+.header {
+  display: flex;
+  height: 75vh;
+}
+
+.typewriterContainer {
+  font-size: 40px;
+  color: white;
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Typewriter {
+  font-size: 30px;
+  padding: 1rem;
+  color:rgb(172, 255, 131)
+}
+
+/* .subHeaderBox {
+
+} */
+
+.contentHeader {
+  /* padding: 40px; */
+  background-color: black;
+  color: white;
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.contentItems {
+  margin-bottom: 15px;
+  width: 65%;
+}
+
+.videoHeader2 {
+  position:relative;
+  z-index: -1;
+  width: 75%;
+  top: 0;
+  left: 0;
+}
+
+.learnMoreHeader {
+  font-size: 14px;
+  color:rgb(172, 255, 131);
+  text-decoration: wavy underline;
+}
+
+.inPageDiv:first-child {
+  margin-top: 25px;
+  border-top:none;
+  border-left:none;
+}
+
+.inPageDiv {
+  margin-top: 25px;
+  padding: 50px;
+  border: black 2px solid;
+}
+
+/* Footer Styling */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px;
+}
+footer img {
+  width: 20px;
+}
+
+.footerItem {
+  margin: 10px;
+}
+
+/* Login | Register Form Styling  */
+
+.mainFormContainer {
+  display: flex;
+  justify-content: space-evenly;
+  height: 60vh;
+}
+
+.videoHeader {
+  z-index: -1;
+  margin-right: 10px;
+   margin-left: 10px;
+ }
+
+.loginForm, .registerForm {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;;
+}
+
+.loginForm h2, .registerForm h2 {
+  margin-bottom:20px;
+}
+
+.form-input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* mobile  */
