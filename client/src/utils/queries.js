@@ -6,38 +6,39 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
-        _id
-        thoughtText
-        createdAt
+      workouts {
+        title: String
+        workoutAuthor: String
+        exercises
       }
     }
   }
 `;
 
-// export const QUERY_THOUGHTS = gql`
-//   query getThoughts {
-//     thoughts {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
+// export const QUERY_WORKOUTS = gql`
+//   query getWorkouts {
+//     workouts {
+    // _id: 
+    // title: String
+    // workoutAuthor: String
+    // exercises: [Exercise]!
 //     }
 //   }
 // `;
 
-// export const QUERY_SINGLE_THOUGHT = gql`
-//   query getSingleThought($thoughtId: ID!) {
-//     thought(thoughtId: $thoughtId) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//         commentAuthor
-//         createdAt
+// export const QUERY_SINGLE_WORKOUT = gql`
+//   query getSingleWorkout($workoutId: ID!) {
+//     workout(workoutId: $workoutId) {
+    // _id:
+    // title 
+    // workoutAuthor
+    // exercises {
+
+        // title
+        // sets
+        // reps
+        // weight
+        // other
 //       }
 //     }
 //   }
@@ -49,11 +50,11 @@ export const QUERY_USER = gql`
 //       _id
 //       username
 //       email
-//       thoughts {
-//         _id
-//         thoughtText
-//         thoughtAuthor
-//         createdAt
+//       workouts {
+//          _id
+        // title
+        // workoutAuthor
+        // exercises
 //       }
 //     }
 //   }
