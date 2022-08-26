@@ -1,0 +1,18 @@
+.formContainment {
+	display: flex;
+	flex-direction: column;
+	padding: 0 10px;
+}
+
+label {
+	display: block;
+	margin: 10px 0;
+}
+
+.btnContainer {
+	display: flex;
+}
+
+.dataFormat {
+	display: block;
+}
