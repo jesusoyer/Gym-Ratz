@@ -1,7 +1,16 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
-
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      workouts {
+        title: String
+        workoutAuthor: String
+        exercises
+      }
     query user($username: String!) {
         user(username: $username) {
             _id
@@ -43,41 +52,5 @@ export const QUERY_WORKOUTS = gql`
             }
         }
     }
-
+  }
 `;
-
-export const QUERY_SINGLE_WORKOUT = gql`
-    query getSingleWorkout($workoutID: ID!) {
-        workout(workoutId: $workoutId) {
-            _id
-            workoutAuthor
-            title
-            exercises {
-                _id
-                title
-                sets
-                reps
-                weight
-
-                other
-            }
-
-        }
-    }
-
-`;
-
-export const QUERY_ME = gql`
-    query me {
-        me {
-            _id
-            username
-            email
-            workouts {
-                _id
-                workoutAuthor
-                title
-            }
-        }
-    }
-`

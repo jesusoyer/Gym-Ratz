@@ -45,5 +45,4 @@ export const ADD_WORKOUT = gql`
             }
         }
    }
-
 `;
