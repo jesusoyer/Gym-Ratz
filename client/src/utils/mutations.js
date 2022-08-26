@@ -11,3 +11,19 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_WORKOUT = gql`
+  mutation addWorkout($workout: WorkoutInput){
+    addWorkout(workout: $workout){
+      title
+      workoutAuthor
+      exercises {
+        title
+        sets
+        reps
+        weight
+        other
+      }
+    }
+  }
+`;
