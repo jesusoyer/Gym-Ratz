@@ -26,17 +26,21 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_WORKOUT = gql`
+
    mutation addWorkout($workout: WorkoutInput) {
         addWorkout(workout: $workout){
+
             _id
             workoutAuthor
             title
             exercises {
                 _id
+
                 title
                 sets
                 reps
                 weight
+
                 other
             }
         }
