@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundVideo from '../images/vertheader.mp4';
-// import SignUp from '../components/SignUp'
+import SignUp from '../pages/signUp'
 
 
 
@@ -89,7 +89,7 @@ return (
             )}
 
 <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
-{/* <SignUp/> */}
+<SignUp/>
 </section>
 </main>
 ) //end of return  
