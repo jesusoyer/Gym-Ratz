@@ -25,7 +25,7 @@ export const ADD_USER = gql`
    }
 `;
 
-<<<<<<< HEAD
+
 // export const ADD_WORKOUT = gql`
 //    mutation addWorkout($workoutAuthor: String!, $title: String!) {
 //         addWorkout(workoutAuthor: $workoutAuthor, title: $title){
@@ -62,7 +62,7 @@ export const ADD_USER = gql`
 
 
 
-=======
+
 export const ADD_WORKOUT = gql`
 
    mutation addWorkout($workout: WorkoutInput) {
@@ -85,4 +85,4 @@ export const ADD_WORKOUT = gql`
    }
 
 `;
->>>>>>> 1eaa3c35182a729d6c13993a12232eda51750092
+
