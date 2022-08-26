@@ -16,8 +16,10 @@ export const QUERY_USER = gql`
                     sets
                     reps
                     weight
+
+                    other
                 }
-                other
+
             }
         }
     }
@@ -36,8 +38,9 @@ export const QUERY_WORKOUTS = gql`
                 sets
                 reps
                 weight
+
+                other
             }
-            other
         }
     }
 
@@ -55,8 +58,10 @@ export const QUERY_SINGLE_WORKOUT = gql`
                 sets
                 reps
                 weight
+
+                other
             }
-            other
+
         }
     }
 
