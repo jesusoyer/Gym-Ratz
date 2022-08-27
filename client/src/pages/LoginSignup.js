@@ -60,37 +60,35 @@ import Auth from '../utils/auth';
 return (
 //react form goes here
 <main className="pagesContainer"> 
+    <section className="mainFormContainer">
+    {data ? (
+            <p>
+                Success! You may now head{' '}
+                <Link to="/profile">To profile page!.</Link>
+                </p>
+                ) : (
 
+    <form onSubmit= {handleFormSubmit} className="loginForm" >
+    <h2> Login </h2>
+        <label> Email: 
+        <input className="form-input" placeholder="email" name="email" type="email" value={formState.email} onChange={handleChange}/>
+        </label>
+        <label> Password: 
+        <input className="form-input" placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/> </label>
 
-<section className="mainFormContainer">
+        <button style={{ cursor: 'pointer' }} type="submit"> Login </button>
+    </form>
+    )}
+    {error && (
+                <div className="my-3 p-3 bg-danger text-white">
+                    {error.message}
+                </div>
+                )}
 
-{data ? (
-        <p>
-            Success! You may now head{' '}
-            <Link to="/profile">To profile page!.</Link>
-              </p>
-            ) : (
+    <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
+    <SignUp/>
+    </section>
 
-<form onSubmit= {handleFormSubmit} className="loginForm" >
-<h2> Login </h2>
-    <label> Email: 
-    <input className="form-input" placeholder="Email" name="email" type="email" value={formState.email} onChange={handleChange}/>
-    </label>
-    <label> Password: 
-    <input className="form-input" placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/>
-    </label>
-    <button style={{ cursor: 'pointer' }} type="submit"> Login </button>
-</form>
-)}
-{error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-
-<video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
-<SignUp/>
-</section>
 </main>
 ) //end of return  
 }

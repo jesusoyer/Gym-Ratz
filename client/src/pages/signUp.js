@@ -40,34 +40,35 @@ const Signup = () => {
     };
   
     return (
-      <main className="flex-row justify-center mb-4">
-        <div className="col-12 col-lg-10">
-          <div className="card">
-            <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-            <div className="card-body">
+           <section className="mainFormContainer">
+             
               {data ? (
                 <p>
                   Success! You may now head{' '}
                   <Link to="/">back to the homepage.</Link>
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit}>
+                <form className="signupForm" onSubmit={handleFormSubmit}>
+                <h2> Sign Up </h2>
+                <label> Username:
                   <input
                     className="form-input"
-                    placeholder="Your username"
+                    placeholder="username"
                     name="username"
                     type="text"
                     value={formState.name}
                     onChange={handleChange}
-                  />
+                  />  </label>
+                  <label> Email: 
                   <input
                     className="form-input"
-                    placeholder="Your email"
+                    placeholder="email"
                     name="email"
                     type="email"
                     value={formState.email}
                     onChange={handleChange}
-                  />
+                  /> </label>
+                  <label> Password: 
                   <input
                     className="form-input"
                     placeholder="******"
@@ -75,7 +76,7 @@ const Signup = () => {
                     type="password"
                     value={formState.password}
                     onChange={handleChange}
-                  />
+                  /> </label>
                   <button
                     className="btn btn-block btn-primary"
                     style={{ cursor: 'pointer' }}
@@ -91,10 +92,8 @@ const Signup = () => {
                   {error.message}
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-      </main>
+
+      </section>
     );
   };
   
