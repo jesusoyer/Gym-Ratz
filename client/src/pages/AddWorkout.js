@@ -3,13 +3,7 @@ import '../styles/Workout.css';
 
 const Form = () => {
 	// array of forms containing set, reps, and weights
-	const [newForm, setNewForm] = useState([{ title: '', sets: '', reps: '', weight: '', other: '' }]);
-	
-	const handleTitle = (e, index) => {
-		const form = [...newForm]; // get all forms from state
-		form[index]['title'] = e.target.value; // assign the value of the sets input to key of the specified form at index
-		setNewForm(form); // set form array with new sets value
-	};
+	const [newForm, setNewForm] = useState([{ sets: '', reps: '', weight: '' }]);
 
 	// handle inputs for sets
 	const handleSets = (e, index) => {
@@ -32,12 +26,6 @@ const Form = () => {
 		setNewForm(form); // set form array with new weights value
 	};
 
-	const handleOther = (e, index) => {
-		const form = [...newForm];
-		form[index]['other'] = e.target.value; // assign the value of the weights input to key of the specified form at index
-		setNewForm(form); // set form array with new weights value
-	};
-
 	// removes a form of exercises
 	const handleRemove = (index) => {
 		const form = [...newForm];
@@ -45,13 +33,9 @@ const Form = () => {
 		setNewForm(form); // set new form array to account for deletion
 	};
 
-
-
-
-
 	// adds a new form for new exercises
 	const handleAdd = () => {
-		setNewForm([...newForm, { sets: '', reps: '', weight: '' }]); // set a new form to form state array
+		setNewForm([...newForm, { title: '', sets: '', reps: '', weight: '', other: '' }]); // set a new form to form state array
 	};
 
 	// log data to console or hgowever we are returning the data
@@ -71,15 +55,6 @@ const Form = () => {
 						<div className="box" key={index}>
 							<p>Exercise {index + 1}</p>
 							<form>
-							<label>Title</label>
-								<input
-									type="text"
-									name="title"
-									placeholder="Enter title"
-									value={input.title}
-									onChange={(e) => handleTitle(e, index)}
-									required
-								/>
 								<label>Sets</label>
 								<input
 									type="text"
@@ -100,15 +75,6 @@ const Form = () => {
 									key="weight"
 									value={input.weight}
 									onChange={(e) => handleWeight(e, index)}
-								/>
-								<label>Other</label>
-								<input
-									type="text"
-									name="other"
-									placeholder="Enter other info"
-									value={input.other}
-									onChange={(e) => handleOther(e, index)}
-									required
 								/>
 							</form>
 							<div className='btnContainer'>
