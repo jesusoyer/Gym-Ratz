@@ -3,11 +3,11 @@ import '../styles/Workout.css';
 
 const Form = () => {
 	// array of forms containing set, reps, and weights
-	const [newForm, setNewForm] = useState([{ sets: '', reps: '', weight: '' }]);
+	const [newForm, setNewForm] = useState([{ title: '', sets: '', reps: '', weight: '', other: '' }]);
 	
 	const handleTitle = (e, index) => {
 		const form = [...newForm]; // get all forms from state
-		form[index]['sets'] = e.target.value; // assign the value of the sets input to key of the specified form at index
+		form[index]['title'] = e.target.value; // assign the value of the sets input to key of the specified form at index
 		setNewForm(form); // set form array with new sets value
 	};
 
@@ -34,7 +34,7 @@ const Form = () => {
 
 	const handleOther = (e, index) => {
 		const form = [...newForm];
-		form[index]['weight'] = e.target.value; // assign the value of the weights input to key of the specified form at index
+		form[index]['other'] = e.target.value; // assign the value of the weights input to key of the specified form at index
 		setNewForm(form); // set form array with new weights value
 	};
 
