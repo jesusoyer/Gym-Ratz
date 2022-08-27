@@ -34,15 +34,15 @@ return (
 
 </section>
 <section className="pagesContainer" id="usage"> 
-<div class="inPageDiv"> 
+<div className="inPageDiv"> 
 <h2> Usage </h2>
 <p> Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. </p>
 </div>
-<div class="inPageDiv"> 
+<div className="inPageDiv"> 
 <h2> Placeholder </h2>
 <p> Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. </p>
 </div>
-<div class="inPageDiv"> 
+<div className="inPageDiv"> 
 <h2> Placeholder </h2>
 <p> Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. </p>
 </div>

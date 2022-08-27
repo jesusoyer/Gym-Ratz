@@ -27,9 +27,9 @@ const Header = () => {
 
         ) : ( 
         <>
+        <Link to="/"> our story </Link>
         <Link to="login"> login + register </Link>
-        <Link to="login"> register </Link>
-
+        
         </>
         )}
 

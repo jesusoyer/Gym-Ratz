@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/jesusoyer/Gym-Ratz#readme",
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "concurrently": "^7.3.0"
-    
   }
 }
