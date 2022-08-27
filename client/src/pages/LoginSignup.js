@@ -10,17 +10,11 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-// LOGIN JS
-//------------------------
-
-
-
-//FAKE FORM FOR UI - can restructure when ready. LMK
-
-
-    const Login = (props) => {
+const Login = (props) => {
         const [formState, setFormState] = useState({ email:'', password:''});
         const [login, {error, data}] = useMutation( LOGIN_USER);
+
+        const [isError, setErrorState] = useState(false);
     
         //update state based on from input changes
     
@@ -31,13 +25,6 @@ import Auth from '../utils/auth';
             [name]: value,
             });
         };
-    
-
-
-
-
-
-
 
     const  handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -49,6 +36,9 @@ import Auth from '../utils/auth';
             Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
+
+            setErrorState(true)
+            console.log(setErrorState)
         }
         // clear form values
         setFormState({
@@ -59,7 +49,7 @@ import Auth from '../utils/auth';
 
 return (
 //react form goes here
-<main className="pagesContainer"> 
+<main className="pagesContainer formsContainerFlex" > 
     <section className="mainFormContainer">
     {data ? (
             <p>
@@ -71,24 +61,25 @@ return (
     <form onSubmit= {handleFormSubmit} className="loginForm" >
     <h2> Login </h2>
         <label> Email: 
-        <input className="form-input" placeholder="email" name="email" type="email" value={formState.email} onChange={handleChange}/>
+        <input className={isError ? 'error-input' : 'form-input'} placeholder="email" name="email" type="email" value={formState.email} onChange={handleChange}/>
         </label>
         <label> Password: 
-        <input className="form-input" placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/> </label>
+        <input className={isError ? 'error-input' : 'form-input'} placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/> </label>
 
         <button style={{ cursor: 'pointer' }} type="submit"> Login </button>
     </form>
     )}
     {error && (
-                <div className="my-3 p-3 bg-danger text-white">
+                <div className="errorFormMess">
                     {error.message}
                 </div>
                 )}
 
+    {/* {isError && <div className={errorStyles.forminputError}>Error message</div>} */}
+
+    </section>
     <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
     <SignUp/>
-    </section>
-
 </main>
 ) //end of return  
 }
