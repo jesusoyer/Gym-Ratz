@@ -183,7 +183,7 @@ footer img {
 .mainFormContainer {
   display: flex;
   justify-content: space-evenly;
-  height: 60vh;
+  height: 70vh;
 }
 
 .videoHeader {
@@ -192,7 +192,7 @@ footer img {
    margin-left: 10px;
  }
 
-.loginForm, .registerForm {
+.loginForm, .signupForm {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -200,7 +200,7 @@ footer img {
   padding: 50px;;
 }
 
-.loginForm h2, .registerForm h2 {
+.loginForm h2, .signupForm h2 {
   margin-bottom:20px;
 }
 
