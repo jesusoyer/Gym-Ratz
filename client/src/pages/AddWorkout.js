@@ -4,6 +4,7 @@ import '../styles/Workout.css';
 const Form = () => {
 	// array of forms containing set, reps, and weights
 	const [newForm, setNewForm] = useState([{ sets: '', reps: '', weight: '' }]);
+	
 
 	// handle inputs for sets
 	const handleSets = (e, index) => {
@@ -32,6 +33,10 @@ const Form = () => {
 		form.splice(index, 1); // delete form at index, 1 time
 		setNewForm(form); // set new form array to account for deletion
 	};
+
+
+
+
 
 	// adds a new form for new exercises
 	const handleAdd = () => {
