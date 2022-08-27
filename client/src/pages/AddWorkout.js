@@ -5,6 +5,11 @@ const Form = () => {
 	// array of forms containing set, reps, and weights
 	const [newForm, setNewForm] = useState([{ sets: '', reps: '', weight: '' }]);
 	
+	const handleTitle = (e, index) => {
+		const form = [...newForm]; // get all forms from state
+		form[index]['sets'] = e.target.value; // assign the value of the sets input to key of the specified form at index
+		setNewForm(form); // set form array with new sets value
+	};
 
 	// handle inputs for sets
 	const handleSets = (e, index) => {
@@ -22,6 +27,12 @@ const Form = () => {
 
 	// handle inputs for weights
 	const handleWeight = (e, index) => {
+		const form = [...newForm];
+		form[index]['weight'] = e.target.value; // assign the value of the weights input to key of the specified form at index
+		setNewForm(form); // set form array with new weights value
+	};
+
+	const handleOther = (e, index) => {
 		const form = [...newForm];
 		form[index]['weight'] = e.target.value; // assign the value of the weights input to key of the specified form at index
 		setNewForm(form); // set form array with new weights value
@@ -60,6 +71,15 @@ const Form = () => {
 						<div className="box" key={index}>
 							<p>Exercise {index + 1}</p>
 							<form>
+							<label>Title</label>
+								<input
+									type="text"
+									name="title"
+									placeholder="Enter title"
+									value={input.title}
+									onChange={(e) => handleTitle(e, index)}
+									required
+								/>
 								<label>Sets</label>
 								<input
 									type="text"
@@ -80,6 +100,15 @@ const Form = () => {
 									key="weight"
 									value={input.weight}
 									onChange={(e) => handleWeight(e, index)}
+								/>
+								<label>Other</label>
+								<input
+									type="text"
+									name="other"
+									placeholder="Enter other info"
+									value={input.other}
+									onChange={(e) => handleOther(e, index)}
+									required
 								/>
 							</form>
 							<div className='btnContainer'>
