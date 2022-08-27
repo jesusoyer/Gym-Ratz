@@ -1,9 +1,26 @@
 import React, { useState } from 'react';
 import '../styles/Workout.css';
 
+// const tempAuthor = "test#3"
+
+// const exerciseFormValues = [{ title: '', sets: '', reps: '', weight: '', other: '' }]
+// const workoutFormValues = [{workoutTitle: '', workoutAuthor: tempAuthor}]
+
 const Form = () => {
 	// array of forms containing set, reps, and weights
-	const [newForm, setNewForm] = useState([{ title: '', sets: '', reps: '', weight: '', other: '' }]);
+	const [newForm, setNewForm] = useState( [{title: '', sets: '', reps: '', weight: '', other: ''}] );
+	const [newTitle, setNewTitle] = useState('')
+
+	const handleWorkoutTitle = (e) => {
+		const { target } = e;
+		// const inputType = target.name; // get all forms from state
+		const inputValue = target.value;
+		// title[index]= e.target.value; // assign the value of the sets input to key of the specified form at index
+		if (target.name = 'workoutTitle'){
+			setNewTitle(inputValue);
+		}
+		 // set form array with new sets value
+	};
 	
 	const handleTitle = (e, index) => {
 		const form = [...newForm]; // get all forms from state
@@ -51,11 +68,12 @@ const Form = () => {
 
 	// adds a new form for new exercises
 	const handleAdd = () => {
-		setNewForm([...newForm, { sets: '', reps: '', weight: '' }]); // set a new form to form state array
+		setNewForm([...newForm, {title: '', sets: '', reps: '', weight: '', other: ''}]); // set a new form to form state array
 	};
 
 	// log data to console or hgowever we are returning the data
 	const handleSubmit = () => {
+		console.log(newTitle);
 		newForm.forEach((item) => {
 			console.log(item);
 		});
@@ -63,11 +81,22 @@ const Form = () => {
 
 	return (
 		<>
+
 			<h1>Welcome Back, Michael!</h1>
 			<p>Enter your exercises for today:</p>
 			<div className='formContainment'>
+			<label>Title</label>
+				<input
+					type="text"
+					name="workoutTitle"
+					placeholder="Enter title"
+					onChange={handleWorkoutTitle}
+					value={newTitle}
+					required
+								/>
 				{newForm.map((input, index) => {
 					return (
+						
 						<div className="box" key={index}>
 							<p>Exercise {index + 1}</p>
 							<form>
