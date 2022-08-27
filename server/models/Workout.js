@@ -9,28 +9,28 @@ const workoutSchema = new Schema(
             required: true,
             trim: true,
         },
-        title: {
+        workoutTitle: {
             type: String,
             required: true,
             
         },
         exercises: [
         {
-        title: {
+            title: {
             type: String,
             required: true,
             trim: true,
         },
-        sets: {
+            sets: {
             type: Number,
             required: true,
 
         },
-        reps: {
+            reps: {
             type: Number,
             required: true
         },
-        weight: {
+             weight: {
             type: Number,
             required: true
         },
