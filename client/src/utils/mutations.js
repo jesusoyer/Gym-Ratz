@@ -40,7 +40,7 @@ export const ADD_WORKOUT = gql`
 
             _id
             workoutAuthor
-            title
+            workoutTitle
             exercises {
                 _id
 

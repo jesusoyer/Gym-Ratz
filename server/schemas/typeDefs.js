@@ -13,7 +13,7 @@ const typeDefs = gql`
 
     type Workout {
         _id: ID
-        title: String
+        workoutTitle: String
         workoutAuthor: String
         exercises: [Exercise]!
     }
@@ -48,7 +48,7 @@ const typeDefs = gql`
       }
 
     input WorkoutInput {
-        title: String
+        workoutTitle: String
         workoutAuthor: String
         exercises: [ExerciseInput]  
     }

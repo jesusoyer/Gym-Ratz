@@ -12,7 +12,7 @@ export const QUERY_USER = gql`
             email
             workouts {
                 _id
-                title
+                workoutTitle
                 exercises {
                     _id
                     title
@@ -39,7 +39,7 @@ export const QUERY_WORKOUTS = gql`
         workouts {
             _id
             workoutAuthor
-            title
+            workoutTitle
             exercises {
                 _id
                 title
@@ -61,7 +61,7 @@ export const QUERY_SINGLE_WORKOUT = gql`
         workout(workoutId: $workoutId) {
             _id
             workoutAuthor
-            title
+            workoutTitle
             exercises {
                 _id
                 title
@@ -83,7 +83,7 @@ export const QUERY_SINGLE_WORKOUT = gql`
        email
        workouts {
         _id
-        title
+        workoutTitle
         workoutAuthor
         exercises
        }
