@@ -11,6 +11,7 @@ return (
 <main> 
 {/* <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video> */}
 <video className="videoHeader2" autoPlay muted loop> <source src={backgroundVideo2} type="video/mp4"/> </video>
+
 <section className="headerContainer"> 
 <div className="header"> 
 
@@ -37,16 +38,17 @@ return (
 <div className="inPageDiv"> 
 <h2> Our Mission </h2>
 <p> Have you ever wanted to work out but didn’t know what exercises to do? Squats, deadlifts, push-ups… it can all be quite confusing if you’re new to the game. Starting your fitness journey can be overwhelming and intimidating- but it doesn’t need to be.
-<div>Gym-Ratz is an online platform where users of all fitness levels can share their workouts with others. With our public domain, you are guaranteed to find the workout perfect for you and your fitness goals.</div>
-<div>Sign up for an account today to be part of our Gym Ratz family!</div>
 </p>
+<p>Gym-Ratz is an online platform where users of all fitness levels can share their workouts with others. With our public domain, you are guaranteed to find the workout perfect for you and your fitness goals.</p>
+<p>Sign up for an account today to be part of our Gym Ratz family!</p>
+
 
 </div>
 <div className="inPageDiv"> 
 <h2> Our Story </h2>
-<p>Gym Rats was created and coded by five individuals (Jesus, Bexi, Mason, Eric, and Laiko) pursuing a certificate in the UT Austin’s Coding Bootcamp. All of us have one thing in common: we’re all small baby programmers that want be jacked junior software developers. With this vision in mind, we created Gym Rats to be an application that makes fitness easily accessible to the coding community and those alike.
-  <div>This application utilizes the following languages: React, GraphQL, Node.js, Express.js, MongoDB, Mongoose ODM, </div>
-</p>
+<p>Gym Rats was created and coded by five individuals (Jesus, Bexi, Mason, Eric, and Laiko) pursuing a certificate in the UT Austin’s Coding Bootcamp. All of us have one thing in common: we’re all small baby programmers that want be jacked junior software developers. With this vision in mind, we created Gym Rats to be an application that makes fitness easily accessible to the coding community and those alike.</p>
+  <p>This application utilizes the following languages: React, GraphQL, Node.js, Express.js, MongoDB, Mongoose ODM, </p>
+
 </div>
 
 <div className="inPageDiv"> 
