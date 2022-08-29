@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+
 }
 
 code {
@@ -20,8 +21,99 @@ code {
     box-sizing: border-box;
   }
 
+  h1 {
+    font-size: 60px;
+  }
+
+  .Typewriter {
+    font-size: 35px;
+    padding: 1rem;
+    color:rgb(172, 255, 131)
+  }
+
+  .featuredWorkoutCard .Typewriter, .liveFeed .Typewriter {
+    font-size: 20px;
+    color: black!important;
+  }
+  
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+  
   p {
     margin-top: 20px;
     line-height: 1.5em;
     font-size: 16px;
+  }
+
+  hr {
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom:20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* a:hover {
+    text-decoration: underline;
+  } */
+
+  ul {
+    list-style: none;
+  }
+
+  .comingSoon {
+    opacity: .2;
+  }
+
+  @media only screen and (max-width: 915px) { 
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+    .Typewriter {
+      font-size: 30px;
+      padding: 1rem;
+      color:rgb(172, 255, 131)
+    }
+  
+    h2 {
+      font-size: 35px;
+    }
+  
+    h3 {
+      font-size: 25px;
+    }
+  
+    h4 {
+      font-size: 20px;
+    }
+  
+    h5 {
+      font-size: 16px;
+    }
+    
+    p {
+      margin-top: 20px;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+  
   }

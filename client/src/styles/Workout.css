@@ -11,7 +11,7 @@
 }
 
 input {
-	width: 92%;
+	width: 100%;
 	padding: 5px 10px;
 	font-size: 14px;
 }
@@ -20,6 +20,7 @@ label {
 	display: block;
 	margin: 10px 0;
 	font-size: 16px;
+	width: 100%;
 }
 
 .btnContainer {

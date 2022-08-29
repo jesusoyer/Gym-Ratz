@@ -1,9 +1,5 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
-  height: 5vmin;
+  height: 8vmin;
   pointer-events: none;
 }
 
@@ -11,21 +7,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -37,45 +18,71 @@
   }
 }
 
-
-
 /* Universal Pages Containers  */
 .pagesContainer {
-  max-width: 900px;
+  max-width: 950px;
   margin:auto;
 }
 
+/* white buttons homepage */
 .btnWhite {
   border: 2px solid rgb(255, 255, 255);
   padding: 10px;
   background-color: transparent;
   color:white;
+  text-decoration: none;
+  text-align: center;
 }
 
+/* regular button class  */
+.btn {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: transparent;
+    color:black;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* form buttons */
 button {
   border: 2px solid black;
   padding: 10px;
   background-color: transparent;
   width: 100%;
+  text-decoration: none;
+  color: black;
 }
+
+
 
 /* Navigation Styling */
 nav {
   display: flex;
   justify-content: space-between;
+  padding: 20px 20px 20px 20px;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  background-color: white;
   padding: 20px;
 }
 
 .navLinks a {
-  margin: 10px;
+  margin-right: 15px;
   color: black;
+
 }
 
 .logo {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   text-decoration: none;
   color: black;
+  margin-left: 10px;
 }
 
 .logo h2 {
@@ -85,50 +92,35 @@ nav {
 /* Home Page Styling  */
 
 .headerContainer {
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 25%;
-  /* height: 60vh; */
 }
 
 .header {
   display: flex;
-  height: 75vh;
+  height: 100vh;
 }
 
+/* typewriter functionality */
 .typewriterContainer {
-  font-size: 40px;
   color: white;
-  flex: 1;
-  padding: 1rem;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Typewriter {
-  font-size: 30px;
-  padding: 1rem;
-  color:rgb(172, 255, 131)
-}
-
-/* .subHeaderBox {
-
-} */
-
 .contentHeader {
-  /* padding: 40px; */
+  text-align: center;
   background-color: black;
   color: white;
-  flex: 1;
-  padding: 1rem;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  /* border-top-left-radius: 60%;  */
 }
 
 .contentItems {
@@ -136,31 +128,205 @@ nav {
   width: 65%;
 }
 
-.videoHeader2 {
-  position:relative;
+.homepageVideo {
+  position: absolute;
   z-index: -1;
-  width: 75%;
-  top: 0;
+  /* width: 75%; */
+  top: -10%;
   left: 0;
 }
 
 .learnMoreHeader {
-  font-size: 14px;
   color:rgb(172, 255, 131);
-  text-decoration: wavy underline;
+  text-decoration: underline;
 }
 
-.inPageDiv:first-child {
-  margin-top: 25px;
+.homepageContentDivs:first-child {
+  background-color: white;
+  margin-top: 0px;
   border-top:none;
   border-left:none;
 }
 
-.inPageDiv {
-  margin-top: 25px;
+.homepageContentDivs {
+  margin-bottom: 60px;
   padding: 50px;
-  border: black 2px solid;
+  /* border: black 3px solid; */
 }
+
+.codeSpan {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  background-color: black;
+  color: white;
+}
+
+.ctaHomepage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black
+}
+
+.ctaHomepage a {
+  border-bottom: none;
+}
+
+/* Featured Workouts Homepage*/
+
+.featuredContainer {
+  background-color:rgba(172, 255, 131, 0.377);
+  padding: 60px;
+  /* background-image: url('./images/boxing-gloves.png');
+  background-size: 70px;
+  background-position:  0 0;
+  background-repeat:no-repeat; */
+}
+
+.featuredH2 h2 {
+  padding: 5px;
+}
+
+.featuredWorkoutCard {
+  display: flex;
+  align-items: baseline;
+}
+.secondDumbellImg {
+  transform: scaleX(-1);
+}
+
+.featured-left {
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  padding: 50px;
+ }
+
+.featured-right {
+  width: 50%;
+}
+
+.featured-right h2 {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+/* profile version */
+
+.introProfileCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.helloUsername{
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.splinterQuote {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.splinterQuote h3  {
+  font-style: italic;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+.featuredWorkoutCard-profile {
+  display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profileNavContainer {
+  padding: 20px;
+  display: flex;
+}
+
+.profileNav {
+  display: flex;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.profileNav img {
+  margin-right: 10px;
+}
+
+.liveFeed {
+  display: flex;
+}
+
+/* Query cards  */
+
+/* homepage version */
+.featured-right .queryCards {
+  width: 100%;
+}
+/* profile page */
+.queryCards {
+  width: 30%;
+  border: 2px solid black;
+  padding: 50px;
+  margin: 15px;
+}
+
+.queriesCardHomepage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.queryCardUsername {
+  margin-top: 10px;
+}
+
+.exerciseDataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.exerciseCard {
+  margin-top: 10px;
+}
+
+.exerciseMiniCard {
+  display: flex;
+}
+
+.exerciseMiniCard li {
+  padding-right: 10px ;
+}
+
+
+/* Our Story homepage */
+
+.imgContent50Homepage {
+  display: flex;
+  padding: 0;
+  border: none;
+}
+
+.gymImgHomepage {
+background-color: pink;
+width: 50%;
+background-image: url('./images/gymstock1.jpg');
+background-size: cover; 
+background-position: center;
+}
+
+.ourStoryP {
+  padding: 60px;
+  width: 50%;
+}
+
 
 /* Footer Styling */
 
@@ -171,7 +337,7 @@ footer {
   margin: 25px;
 }
 footer img {
-  width: 20px;
+  width: 50px;
 }
 
 .footerItem {
@@ -235,4 +401,3 @@ width: 50%;
   border: 2px solid red;
 }
 
-/* mobile  */
