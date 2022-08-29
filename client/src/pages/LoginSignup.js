@@ -74,9 +74,6 @@ return (
                     {error.message}
                 </div>
                 )}
-
-    {/* {isError && <div className={errorStyles.forminputError}>Error message</div>} */}
-
     </section>
     <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
     <SignUp/>

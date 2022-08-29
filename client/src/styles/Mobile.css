@@ -232,19 +232,19 @@
   
   .formsContainerFlex {
     display: flex;
-    justify-content: space-evenly;
-    justify-content: center;
-    height: 75vh;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 40px;
   }
   
   .mainFormContainer {
-  width: 50%;
+  width: 100%;
+  margin-bottom: 20px;
   }
   
   .videoHeader {
-    z-index: -1;
-    margin-right: 10px;
-     margin-left: 10px;
+    display: none;
    }
   
   .loginForm, .signupForm {
