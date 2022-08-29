@@ -114,18 +114,11 @@ nav {
 
 /* typewriter functionality */
 .typewriterContainer {
-  font-size: 40px;
   color: white;
   width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.Typewriter {
-  font-size: 30px;
-  padding: 1rem;
-  color:rgb(172, 255, 131)
 }
 
 .contentHeader {
@@ -154,13 +147,8 @@ nav {
 }
 
 .learnMoreHeader {
-  font-size: 14px;
   color:rgb(172, 255, 131);
-  text-decoration: wavy underline;
-}
-
-#usage {
-  clear: both;	
+  text-decoration: underline;
 }
 
 .homepageContentDivs:first-child {
@@ -199,12 +187,11 @@ nav {
 .featuredContainer {
   background-color:rgba(172, 255, 131, 0.377);
   padding: 60px;
+  /* background-image: url('./images/boxing-gloves.png');
+  background-size: 70px;
+  background-position:  0 0;
+  background-repeat:no-repeat; */
 }
-/* 
-.featuredH2 {
-  display: flex;
-  justify-content: center;
-} */
 
 .featuredH2 h2 {
   padding: 5px;
@@ -212,7 +199,7 @@ nav {
 
 .featuredWorkoutCard {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .featuredWorkoutCard .Typewriter {
@@ -225,7 +212,6 @@ nav {
   text-align: center;
   background-color: white;
   padding: 50px;
-  margin-bottom: 40px;
  }
 
 .featured-right {

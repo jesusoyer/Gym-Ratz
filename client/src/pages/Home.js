@@ -5,8 +5,10 @@ import Typewriter from 'typewriter-effect';
 import '../styles/Mobile.css';
 
 //assets imports
-import backgroundVideoHomePg from '../images/header.mp4'
-import weightIcon from '../images/weights.png'
+import backgroundVideoHomePg from '../images/header.mp4';
+import weightIcon from '../images/dumbbell.png';
+// import masterSplinterIcon from '../images/splinter.png'
+
 //For 1 Featured Workout (mockup)
 import WorkoutList from '../components/WorkoutList';
 
@@ -40,8 +42,8 @@ return (
 
 {/* Our Mission Section */}
 </section>
-<section className="pagesContainer" id="usage"> 
-<div className="homepageContentDivs"> 
+<section> 
+<div className="homepageContentDivs pagesContainer"> 
 <h2> Our Mission </h2>
 <p> Have you ever wanted to work out but didn’t know what exercises to do? Squats, deadlifts, push-ups… it can all be quite confusing if you’re new to the game. Starting your fitness journey can be overwhelming and intimidating- but it doesn’t need to be. Find the workouts that are right for you, at your own pace.
 </p> 
@@ -52,30 +54,34 @@ return (
 
 <section className="homepageContentDivs featuredContainer">
 
-  <div className="featuredWorkoutCard"> 
+  <div className="pagesContainer featuredWorkoutCard"> 
   <div className="featured-left"> 
-    <img src={weightIcon} alt="weight-icon" width="70px"/>
+  {/* <img src={masterSplinterIcon} alt="weight-icon" width="70px"/> */}
+  <img src={weightIcon} alt="weight-icon" width="70px"/>
     <div className="featuredH2"> 
       <h2> Anytime. </h2>
       <h2> Anywhere. </h2>
       <h2> Any Level. </h2>
     </div> 
+    
     <Typewriter 
     options={{
       strings: ["brah...", "don't skip leg day", "just sign up..." ],
       autoStart: true,
       loop: true,
     }}/>
+  <img src={weightIcon} alt="weight-icon" width="70px"/>
   </div>
+
   <div className="featured-right"> 
   <h2> workout of the day: </h2>
-  <WorkoutList/>
+  <WorkoutList />
   </div>
   </div>
 </section>
 
 {/* Our Story Section */}
-<div className="homepageContentDivs imgContent50Homepage "> 
+<div className="pagesContainer homepageContentDivs imgContent50Homepage "> 
 {/* div image leave empty */}
 <div className="gymImgHomepage"> </div>
 <div className="ourStoryP"> 
@@ -86,7 +92,7 @@ return (
 </div>
 
 {/* Future Development Section */}
-<div className="homepageContentDivs"> 
+<div className="pagesContainer homepageContentDivs"> 
 <h2> Future Development </h2>
 <p>Gym Ratz is always looking to improve and expand. Some of the future developments we plan on implementing to our application include features to save a workout to your personal profile, and the ability for trainers to create a professional business profile to market their services. Other features we would look into adding include being able to add friends and the ability to comment on other users’ posts. </p>
 </div>

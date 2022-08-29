@@ -21,14 +21,18 @@ code {
     box-sizing: border-box;
   }
 
-  p {
-    margin-top: 20px;
-    line-height: 1.5em;
-    font-size: 16px;
+  h1 {
+    font-size: 60px;
+  }
+
+  .Typewriter {
+    font-size: 35px;
+    padding: 1rem;
+    color:rgb(172, 255, 131)
   }
 
   h2 {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   h3 {
@@ -40,6 +44,12 @@ code {
   }
 
   h5 {
+    font-size: 16px;
+  }
+  
+  p {
+    margin-top: 20px;
+    line-height: 1.5em;
     font-size: 16px;
   }
 
@@ -60,4 +70,40 @@ code {
 
   ul {
     list-style: none;
+  }
+
+  @media only screen and (max-width: 915px) { 
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+    .Typewriter {
+      font-size: 30px;
+      padding: 1rem;
+      color:rgb(172, 255, 131)
+    }
+  
+    h2 {
+      font-size: 35px;
+    }
+  
+    h3 {
+      font-size: 25px;
+    }
+  
+    h4 {
+      font-size: 20px;
+    }
+  
+    h5 {
+      font-size: 16px;
+    }
+    
+    p {
+      margin-top: 20px;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+  
   }
