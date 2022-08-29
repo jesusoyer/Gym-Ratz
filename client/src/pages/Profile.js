@@ -1,20 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-// import Typewriter from 'typewriter-effect';
+import { Link, Outlet } from 'react-router-dom';
 // import { Navigate, useParams } from 'react-router-dom';
 // import { useQuery } from '@apollo/client';
 
 // import { QUERY_USER, QUERY_ME } from '../utils/queries';
 // import Auth from '../utils/auth';
 
-import WorkoutList from '../components/WorkoutList';
-
 //assets
-import Splinter from '../images/splinter.png';
 import Mikey from '../images/michaelangelo.png';
 import Saved from '../images/love.png';
 import AddIcon from '../images/pencil.png';
 import Pin from '../images/cheese.png';
+import AllWorkoutsIcons from '../images/dumbbell.png'
 
 
 const Profile = () => {
@@ -56,34 +53,31 @@ const Profile = () => {
 return (
     <main> 
 
-  
-<div className="splinterQuote"> <h2>“The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal.” - Master Splinter <img src={Splinter} alt="logo" width="55px"/>  </h2>
-     </div>
-
-<section className="homepageContentDivs featuredContainer">
-
-  <div className="featuredWorkoutCard-profile"> 
- 
-  <div className="featured-left"> 
-    <div className="featuredH2"> 
+<div className="introProfileCard"> 
+<div className="helloUsername"> 
     <img src={Mikey} alt="logo" width="45px"/>  
       <h2> Hi \ Username! / </h2>
       {/* once query works turn this on */}
             {/* <h2> Viewing {userParam ? `${user.username}` : user.username} profile </h2> */}
     </div> 
-  </div>
-  <div className="featured-right featuredRight-profile">
-        <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
+    
+<div className="splinterQuote"> <h3>“The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal.” <span> - Master Splinter  </span></h3> 
+     </div>
+
+     </div>
+
+<section className="homepageContentDivs featuredContainer">
+  <div className="profileNavContainer">
+        <Link className="profileNav" to="/profile"> <img src={AllWorkoutsIcons} alt="weights" width="36px"/>  workouts </Link>
+        <Link className="profileNav" to="/profile/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
         <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
             <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
         </div>
-  </div>
 
 {/* ------ */}
 
   <div> 
-      <h3> Recent Workouts:</h3>
-  <WorkoutList />
+  <Outlet />
   </div>
 </section>
 </main>
@@ -94,3 +88,21 @@ return (
 export default Profile;
 
 
+
+//code back up
+
+{/* <div className="featuredWorkoutCard-profile"> 
+ 
+<div className="featured-left"> 
+  <div className="featuredH2"> 
+  <img src={Mikey} alt="logo" width="45px"/>  
+    <h2> Hi \ Username! / </h2>
+
+  </div> 
+</div>
+<div className="featured-right featuredRight-profile">
+      <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
+      <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
+          <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
+      </div>
+</div> */}

@@ -31,6 +31,12 @@ code {
     color:rgb(172, 255, 131)
   }
 
+  .featuredWorkoutCard .Typewriter, .liveFeed .Typewriter {
+    font-size: 20px;
+    color: black!important;
+  }
+  
+
   h2 {
     font-size: 35px;
   }

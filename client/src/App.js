@@ -20,6 +20,8 @@ import AddWorkout from "./pages/AddWorkout";
 //Components Imported
 import Header from './components/Header';
 import Footer from './components/Footer';
+import WorkoutList from "./components/WorkoutList";
+import MyWorkouts from "./components/MyWorkouts";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -59,7 +61,10 @@ function App() {
     {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
     <Route path="/register" element={<LoginSignUp/>}/>
     <Route path="/workout" element={<AddWorkout/>}/>
-    <Route path="/profile" element={<Profile/>}/>
+    <Route path="/profile" element={<Profile/>}>
+      <Route path="" element={<WorkoutList/>}/>
+      <Route path="myworkouts" element={<MyWorkouts/>}/>
+    </Route>
     <Route path="/me" element={<Profile />} />
     <Route path="/profiles/:username"element={<Profile />}/>
   </Routes>
