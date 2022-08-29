@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 // import backgroundVideo from '../images/vertheader.mp4'
 import backgroundVideoHomePg from '../images/header.mp4'
 //Question: Do we want home page to have a few workout posts?
-// import WorkoutList from '../components/WorkoutList';
+import WorkoutList from '../components/WorkoutList';
 
 function Home(){
 return (
@@ -45,12 +45,28 @@ return (
 
 {/* Featured Workouts Section */}
 
-<section>
+<section className="homepageContentDivs featuredContainer">
+
+  <div className="featuredWorkoutCard"> 
+  <div className="featured-left"> 
+  {/* <img src=""> */}
   <div className="featuredH2"> 
-  <h2> Anytime. </h2>
-  <h2> Anywhere. </h2>
-  <h2> Any Level. </h2>
+    <h2> Anytime. </h2>
+    <h2> Anywhere. </h2>
+    <h2> Any Level. </h2>
+  </div> 
+  <Typewriter 
+  options={{
+    strings: ['', '', '',''],
+    autoStart: true,
+    loop: true,
+  }}/>
   </div>
+  <div className="featured-right"> 
+  <WorkoutList/>
+  </div>
+  </div>
+
 
 </section>
 
@@ -67,7 +83,7 @@ return (
 
 {/* Future Development Section */}
 <div className="homepageContentDivs"> 
-<h2> Our Future </h2>
+<h2> Future Development </h2>
 <p>Gym Ratz is always looking to improve and expand. Some of the future developments we plan on implementing to our application include features to save a workout to your personal profile, and the ability for trainers to create a professional business profile to market their services. Other features we would look into adding include being able to add friends and the ability to comment on other users’ posts. </p>
 </div>
 </section>

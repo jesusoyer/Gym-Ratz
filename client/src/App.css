@@ -52,6 +52,7 @@
   background-color: transparent;
   color:white;
   text-decoration: none;
+  text-align: center;
 }
 
 /* regular button class  */
@@ -61,6 +62,7 @@
     background-color: transparent;
     color:black;
     text-decoration: none;
+    text-align: center;
 }
 
 /* form buttons */
@@ -73,16 +75,6 @@ button {
   color: black;
 }
 
-
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  text-decoration: underline;
-}
 
 /* Navigation Styling */
 nav {
@@ -117,15 +109,14 @@ nav {
 
 .header {
   display: flex;
-  height: 75vh;
+  height: 100vh;
 }
 
 /* typewriter functionality */
 .typewriterContainer {
   font-size: 40px;
   color: white;
-  flex: 1;
-  padding: 1rem;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,16 +129,15 @@ nav {
 }
 
 .contentHeader {
-  /* padding: 40px; */
+  text-align: center;
   background-color: black;
   color: white;
-  flex: 1;
-  padding: 1rem;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  /* border-top-left-radius: 60%;  */
 }
 
 .contentItems {
@@ -174,6 +164,7 @@ nav {
 }
 
 .homepageContentDivs:first-child {
+  background-color: white;
   margin-top: 0px;
   border-top:none;
   border-left:none;
@@ -182,7 +173,7 @@ nav {
 .homepageContentDivs {
   margin-bottom: 60px;
   padding: 50px;
-  border: black 2px solid;
+  /* border: black 3px solid; */
 }
 
 .codeSpan {
@@ -201,6 +192,72 @@ nav {
 
 .ctaHomepage a {
   border-bottom: none;
+}
+
+/* Featured Workouts Homepage*/
+
+.featuredContainer {
+  background-color:rgba(172, 255, 131, 0.377);
+  padding: 60px;
+}
+/* 
+.featuredH2 {
+  display: flex;
+  justify-content: center;
+} */
+
+.featuredH2 h2 {
+  padding: 5px;
+}
+
+.featuredWorkoutCard {
+  display: flex;
+  align-items: center;
+}
+
+.featuredWorkoutCard .Typewriter {
+  color: black!important;
+}
+
+.featured-left {
+  width: 50%;
+}
+
+.featured-right {
+  width: 50%;
+}
+
+/* Query cards  */
+
+.queryCards {
+  width: 100%;
+  border: 2px solid black;
+  padding: 50px;
+  margin: 10px;
+}
+
+.queryCardUsername {
+  margin-top: 10px;
+}
+
+.exerciseDataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.exerciseCard {
+  margin-top: 10px;
+}
+
+.exerciseMiniCard {
+  display: flex;
+}
+
+
+
+.exerciseMiniCard li {
+  padding-right: 10px ;
 }
 
 /* Our Story homepage */
@@ -224,16 +281,6 @@ background-position: center;
   width: 50%;
 }
 
-/* Featured Workouts Homepage*/
-
-.featuredH2 {
-  display: flex;
-  justify-content: center;
-}
-
-.featuredH2 h2 {
-  padding: 15px;
-}
 
 /* Footer Styling */
 
