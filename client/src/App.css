@@ -41,22 +41,47 @@
 
 /* Universal Pages Containers  */
 .pagesContainer {
-  max-width: 900px;
+  max-width: 950px;
   margin:auto;
 }
 
+/* white buttons homepage */
 .btnWhite {
   border: 2px solid rgb(255, 255, 255);
   padding: 10px;
   background-color: transparent;
   color:white;
+  text-decoration: none;
 }
 
+/* regular button class  */
+.btn {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: transparent;
+    color:black;
+    text-decoration: none;
+}
+
+/* form buttons */
 button {
   border: 2px solid black;
   padding: 10px;
   background-color: transparent;
   width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Navigation Styling */
@@ -85,12 +110,9 @@ nav {
 /* Home Page Styling  */
 
 .headerContainer {
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 25%;
-  /* height: 60vh; */
 }
 
 .header {
@@ -98,6 +120,7 @@ nav {
   height: 75vh;
 }
 
+/* typewriter functionality */
 .typewriterContainer {
   font-size: 40px;
   color: white;
@@ -113,10 +136,6 @@ nav {
   padding: 1rem;
   color:rgb(172, 255, 131)
 }
-
-/* .subHeaderBox {
-
-} */
 
 .contentHeader {
   /* padding: 40px; */
@@ -136,11 +155,11 @@ nav {
   width: 65%;
 }
 
-.videoHeader2 {
-  position:relative;
+.homepageVideo {
+  position: absolute;
   z-index: -1;
-  width: 75%;
-  top: 0;
+  /* width: 75%; */
+  top: -10%;
   left: 0;
 }
 
@@ -150,16 +169,70 @@ nav {
   text-decoration: wavy underline;
 }
 
-.inPageDiv:first-child {
-  margin-top: 25px;
+#usage {
+  clear: both;	
+}
+
+.homepageContentDivs:first-child {
+  margin-top: 0px;
   border-top:none;
   border-left:none;
 }
 
-.inPageDiv {
-  margin-top: 25px;
+.homepageContentDivs {
+  margin-bottom: 60px;
   padding: 50px;
   border: black 2px solid;
+}
+
+.codeSpan {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  background-color: black;
+  color: white;
+}
+
+.ctaHomepage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black
+}
+
+.ctaHomepage a {
+  border-bottom: none;
+}
+
+/* Our Story homepage */
+
+.imgContent50Homepage {
+  display: flex;
+  padding: 0;
+  border: none;
+}
+
+.gymImgHomepage {
+background-color: pink;
+width: 50%;
+background-image: url('./images/gymstock1.jpg');
+background-size: cover; 
+background-position: center;
+}
+
+.ourStoryP {
+  padding: 60px;
+  width: 50%;
+}
+
+/* Featured Workouts Homepage*/
+
+.featuredH2 {
+  display: flex;
+  justify-content: center;
+}
+
+.featuredH2 h2 {
+  padding: 15px;
 }
 
 /* Footer Styling */

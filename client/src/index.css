@@ -6,6 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+61,acff83+100&0+0,0+63,0.65+100 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 61%, rgba(251,255,249,0) 63%, rgba(172,255,131,0.65) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 61%,rgba(251,255,249,0) 63%,rgba(172,255,131,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 61%,rgba(251,255,249,0) 63%,rgba(172,255,131,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6acff83',GradientType=0 ); /* IE6-9 */
+
 }
 
 code {
@@ -24,4 +30,8 @@ code {
     margin-top: 20px;
     line-height: 1.5em;
     font-size: 16px;
+  }
+
+  h2 {
+    font-size: 30px;
   }
