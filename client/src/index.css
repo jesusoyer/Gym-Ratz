@@ -72,6 +72,10 @@ code {
     list-style: none;
   }
 
+  .comingSoon {
+    opacity: .2;
+  }
+
   @media only screen and (max-width: 915px) { 
   
     h1 {

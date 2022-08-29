@@ -10,7 +10,7 @@ import weightIcon from '../images/dumbbell.png';
 // import masterSplinterIcon from '../images/splinter.png'
 
 //For 1 Featured Workout (mockup)
-import WorkoutList from '../components/WorkoutList';
+// import WorkoutList from '../components/WorkoutList';
 
 function Home(){
 return (
@@ -70,12 +70,47 @@ return (
       autoStart: true,
       loop: true,
     }}/>
-  <img src={weightIcon} alt="weight-icon" width="70px"/>
+  <img src={weightIcon} alt="weight-icon" width="70px" className="secondDumbellImg"/>
   </div>
 
   <div className="featured-right"> 
   <h2> workout of the day: </h2>
-  <WorkoutList />
+  {/* fake card for mockup */}
+  <div className="queryCards">
+      <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
+      <h5 className="queryCardUsername"> @megThee </h5>
+      <hr></hr>
+      <div className="exerciseDataContainer">
+        <div className="exerciseCard"> 
+            <h5> Squats </h5>
+                <ul className="exerciseMiniCard">
+                    <li> sets: 3 </li>
+                    <li> reps: 8 </li>
+                    <li> weigths: 20 lbs  </li>
+                </ul>
+                {/* <div> other: Take a rest ever 30 sec  </div> */}
+        </div>
+        <div className="exerciseCard">
+            <h5> Deadlifts </h5>
+                <ul className="exerciseMiniCard">
+                    <li> sets: 3 </li>
+                    <li> reps: 8 </li>
+                    <li> weigths: 20 lbs </li>
+                </ul>
+                <div> other: Don't forget to keep a leveled back.  </div>
+        </div>
+        <div className="exerciseCard">
+            <h5> Sumo Squats </h5>
+                <ul className="exerciseMiniCard">
+                    <li> sets: 3 </li>
+                    <li> reps: 8 </li>
+                    <li> weigths: 15 lbs</li>
+                </ul>
+                <div> other: Take a rest ever 30 sec. Repeat 3 times  </div>
+        </div>
+      </div>
+      </div>
+    {/* fake card for mockup */}
   </div>
   </div>
 </section>

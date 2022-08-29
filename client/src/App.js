@@ -1,6 +1,6 @@
 import React from "react"; 
 import './App.css';
-import "./index.css"
+import "./index.css";
 
 import {
   ApolloClient,
@@ -9,12 +9,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-
-
-
-
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Pages Imported 
@@ -27,18 +21,9 @@ import AddWorkout from "./pages/AddWorkout";
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-
-
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
-
-
-
-
-
-
-
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -58,11 +43,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-
-
-
-
 function App() {
   return ( 
 
@@ -80,6 +60,8 @@ function App() {
     <Route path="/register" element={<LoginSignUp/>}/>
     <Route path="/workout" element={<AddWorkout/>}/>
     <Route path="/profile" element={<Profile/>}/>
+    <Route path="/me" element={<Profile />} />
+    <Route path="/profiles/:username"element={<Profile />}/>
   </Routes>
   
   {/* footer is static  */}

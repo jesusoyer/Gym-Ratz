@@ -6,7 +6,9 @@ const WorkoutList = () => {
 
 return (
     <div className="queriesCardHomepage"> 
+   
     <div className="queryCards">
+        Example: 8/29/22
       <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
       <h5 className="queryCardUsername"> @megThee </h5>
       <hr></hr>
@@ -40,7 +42,7 @@ return (
         </div>
       </div>
       </div>
-  
+
     </div>
 )
 }
