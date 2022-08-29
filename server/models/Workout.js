@@ -12,34 +12,36 @@ const workoutSchema = new Schema(
         workoutTitle: {
             type: String,
             required: true,
+            trim:true
             
         },
-        exercises: [
-        {
-            title: {
+            exerciseType: {
             type: String,
             required: true,
             trim: true,
         },
             sets: {
-            type: Number,
+            type: String,
             required: true,
-
+            trim: true,
         },
             reps: {
-            type: Number,
-            required: true
+            type: String,
+            required: true,
+            trim: true,
         },
-             weight: {
-            type: Number,
-            required: true
-        },
-     }, 
-    ],
-        other: {
-            type: String
-        } 
-    }
+            weight: {
+            type: String,
+            required: true,
+            trim: true,
+        }, 
+            description: {
+            type: String,
+            required: true,
+            trim: true,
+        }
+        }
+    
 );
 
 const Workout = model('Workout', workoutSchema)
