@@ -1,0 +1,300 @@
+/* MOBILE DESIGN */
+
+@media only screen and (max-width: 915px) { 
+  /* Universal Pages Containers  */
+  .pagesContainer {
+    max-width: 950px;
+    margin:auto;
+  }
+  
+  /* Navigation Styling */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+  
+  .navLinks a {
+    margin: 10px;
+    color: black;
+  }
+  
+  .logo {
+    display: flex;
+    /* align-items: center; */
+    text-decoration: none;
+    color: black;
+  }
+  
+  .logo h2 {
+    padding-right: 0px;
+  }
+  
+  /* Home Page Styling  */
+  
+  .headerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .header {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* typewriter functionality */
+  .typewriterContainer {
+    font-size: 40px;
+    color: white;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Typewriter {
+    font-size: 30px;
+    padding: 1rem;
+    color:rgb(172, 255, 131)
+  }
+  
+  .contentHeader {
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-top-left-radius: 60%;  */
+  }
+  
+  .contentItems {
+    margin-bottom: 15px;
+    width: 65%;
+  }
+  
+  .homepageVideo {
+    position: absolute;
+    z-index: -1;
+    /* width: 75%; */
+    top: -10%;
+    left: 0;
+  }
+  
+  .learnMoreHeader {
+    font-size: 14px;
+    color:rgb(172, 255, 131);
+    text-decoration: wavy underline;
+  }
+  
+  #usage {
+    clear: both;	
+  }
+  
+  .homepageContentDivs:first-child {
+    background-color: white;
+    margin-top: 0px;
+    border-top:none;
+    border-left:none;
+  }
+  
+  .homepageContentDivs {
+    margin-bottom: 60px;
+    padding: 50px;
+    /* border: black 3px solid; */
+  }
+  
+  .codeSpan {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    background-color: black;
+    color: white;
+  }
+  
+  .ctaHomepage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid black
+  }
+  
+  .ctaHomepage a {
+    border-bottom: none;
+  }
+  
+  /* Featured Workouts Homepage*/
+  
+  .featuredContainer {
+    background-color:rgba(172, 255, 131, 0.377);
+    padding: 60px;
+  }
+  /* 
+  .featuredH2 {
+    display: flex;
+    justify-content: center;
+  } */
+  
+  .featuredH2 h2 {
+    padding: 5px;
+  }
+  
+  .featuredWorkoutCard {
+    display: flex;
+    align-items: center;
+  }
+  
+  .featuredWorkoutCard .Typewriter {
+    font-size: 20px;
+    color: black!important;
+  }
+  
+  .featured-left {
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    padding: 50px;
+    margin-bottom: 40px;
+   }
+  
+  .featured-right {
+    width: 50%;
+  }
+  
+  .featured-right h2 {
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+  
+  /* Query cards  */
+  
+  .queryCards {
+    width: 100%;
+    border: 2px solid black;
+    padding: 50px;
+  }
+  
+  .queryCardUsername {
+    margin-top: 10px;
+  }
+  
+  .exerciseDataContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .exerciseCard {
+    margin-top: 10px;
+  }
+  
+  .exerciseMiniCard {
+    display: flex;
+  }
+  
+  
+  
+  .exerciseMiniCard li {
+    padding-right: 10px ;
+  }
+  
+  /* Our Story homepage */
+  
+  .imgContent50Homepage {
+    display: flex;
+    padding: 0;
+    border: none;
+  }
+  
+  .gymImgHomepage {
+  background-color: pink;
+  width: 50%;
+  background-image: url('../images/gymstock1.jpg');
+  background-size: cover; 
+  background-position: center;
+  }
+  
+  .ourStoryP {
+    padding: 60px;
+    width: 50%;
+  }
+  
+  
+  /* Footer Styling */
+  
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+  }
+  footer img {
+    width: 20px;
+  }
+  
+  .footerItem {
+    margin: 10px;
+  }
+  
+  /* Login | Register Form Styling  */
+  
+  .formsContainerFlex {
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    height: 75vh;
+  }
+  
+  .mainFormContainer {
+  width: 50%;
+  }
+  
+  .videoHeader {
+    z-index: -1;
+    margin-right: 10px;
+     margin-left: 10px;
+   }
+  
+  .loginForm, .signupForm {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    height: 100%;
+  }
+  
+  .loginForm h2, .signupForm h2 {
+    margin-bottom:20px;
+  }
+  
+  .form-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .errorFormMess {
+    position: absolute;
+    position: absolute;
+    bottom: 11%;
+    background-color:rgb(172, 255, 131);
+    padding: 20px;
+    border: 2px solid black;
+  }
+  
+  .error-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid red;
+  }
+
+}

@@ -216,15 +216,25 @@ nav {
 }
 
 .featuredWorkoutCard .Typewriter {
+  font-size: 20px;
   color: black!important;
 }
 
 .featured-left {
   width: 50%;
-}
+  text-align: center;
+  background-color: white;
+  padding: 50px;
+  margin-bottom: 40px;
+ }
 
 .featured-right {
   width: 50%;
+}
+
+.featured-right h2 {
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 /* Query cards  */
@@ -233,7 +243,6 @@ nav {
   width: 100%;
   border: 2px solid black;
   padding: 50px;
-  margin: 10px;
 }
 
 .queryCardUsername {
@@ -355,4 +364,3 @@ width: 50%;
   border: 2px solid red;
 }
 
-/* mobile  */

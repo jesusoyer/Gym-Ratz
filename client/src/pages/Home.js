@@ -1,8 +1,13 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
-// import backgroundVideo from '../images/vertheader.mp4'
+
+//mobile css - don't delete
+import '../styles/Mobile.css';
+
+//assets imports
 import backgroundVideoHomePg from '../images/header.mp4'
-//Question: Do we want home page to have a few workout posts?
+import weightIcon from '../images/weights.png'
+//For 1 Featured Workout (mockup)
 import WorkoutList from '../components/WorkoutList';
 
 function Home(){
@@ -49,25 +54,24 @@ return (
 
   <div className="featuredWorkoutCard"> 
   <div className="featured-left"> 
-  {/* <img src=""> */}
-  <div className="featuredH2"> 
-    <h2> Anytime. </h2>
-    <h2> Anywhere. </h2>
-    <h2> Any Level. </h2>
-  </div> 
-  <Typewriter 
-  options={{
-    strings: ['', '', '',''],
-    autoStart: true,
-    loop: true,
-  }}/>
+    <img src={weightIcon} alt="weight-icon" width="70px"/>
+    <div className="featuredH2"> 
+      <h2> Anytime. </h2>
+      <h2> Anywhere. </h2>
+      <h2> Any Level. </h2>
+    </div> 
+    <Typewriter 
+    options={{
+      strings: ["brah...", "don't skip leg day", "just sign up..." ],
+      autoStart: true,
+      loop: true,
+    }}/>
   </div>
   <div className="featured-right"> 
+  <h2> workout of the day: </h2>
   <WorkoutList/>
   </div>
   </div>
-
-
 </section>
 
 {/* Our Story Section */}
