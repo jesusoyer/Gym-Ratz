@@ -85,7 +85,7 @@ export const QUERY_SINGLE_WORKOUT = gql`
         _id
         workoutTitle
         workoutAuthor
-        exercises
+        exercises 
        }
      }
    }
