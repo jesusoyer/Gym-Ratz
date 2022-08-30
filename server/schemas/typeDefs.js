@@ -8,7 +8,7 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
-        workouts: [Workout]!    
+        workouts: [Workout]   
     }
 
     type Workout {

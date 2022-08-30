@@ -66,7 +66,7 @@ function App() {
       <Route path="myworkouts" element={<MyWorkouts/>}/>
     </Route>
     <Route path="/me" element={<Profile />} />
-    <Route path="/profiles/:username"element={<Profile />}/>
+    <Route path="/profile/:username"element={<Profile />}/>
   </Routes>
   
   {/* footer is static  */}
