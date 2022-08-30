@@ -121,15 +121,14 @@ export const QUERY_WORKOUTS = gql`
         _id
         workoutTitle
         workoutAuthor
-<<<<<<< HEAD
         exerciseType
         sets
         reps
         weight
         description
-=======
-        exercises 
->>>>>>> fbc73064a28a096932017e704c51785cb1fa7095
+
+        
+
        }
      }
    }
