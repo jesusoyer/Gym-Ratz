@@ -13,6 +13,9 @@ import AddIcon from '../images/pencil.png';
 import Pin from '../images/cheese.png';
 import AllWorkoutsIcons from '../images/dumbbell.png'
 
+//404 
+import forOfor from '../images/error-404.png'
+
 
 const Profile = () => {
 
@@ -22,13 +25,13 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
-  console.log("data", data)
+  // console.log("data", data)
 
   const finalData = data ? data : {}
-  console.log("Final Data", finalData)
+  // console.log("Final Data", finalData)
   const user = finalData.me || finalData.user || {};
 
-  console.log("User Data", user)
+  // console.log("User Data", user)
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -41,10 +44,23 @@ const Profile = () => {
 
   if (!user.username) {
     return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      
+      <div className="featuredWorkoutCard-profile"> 
+      
+      <div className="featured-left"> 
+        <div className="featuredH2"> 
+        <img src={forOfor} alt="logo" width="100px"/>  
+          {/* <h2> 404 Oops! </h2> */}
+
+        </div> 
+      </div>
+      <div className="featured-right featuredRight-profile">
+            <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
+            <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
+                <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
+            </div>
+      </div>
+
     );
   }
 
@@ -59,7 +75,9 @@ const Profile = () => {
         </div>
 
         <div className="splinterQuote"> <h3>"The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal." <span> - Master Splinter  </span></h3>
+
         
+
         </div>
 
       </div>
@@ -75,7 +93,7 @@ const Profile = () => {
         {/* ------ */}
 
         <div>
-          <Outlet />
+          <Outlet context={user} />
         </div>
       </section>
     </main>
@@ -86,21 +104,3 @@ const Profile = () => {
 export default Profile;
 
 
-
-//code back up
-
-{/* <div className="featuredWorkoutCard-profile"> 
- 
-<div className="featured-left"> 
-  <div className="featuredH2"> 
-  <img src={Mikey} alt="logo" width="45px"/>  
-    <h2> Hi \ Username! / </h2>
-
-  </div> 
-</div>
-<div className="featured-right featuredRight-profile">
-      <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
-      <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
-          <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
-      </div>
-</div> */}

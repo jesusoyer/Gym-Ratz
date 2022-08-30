@@ -33,7 +33,7 @@ return (
 
 <div className="subHeaderBox contentHeader"> 
 <p className="contentItems">  Gym-Ratz is an online platform where users of all fitness levels can share their workouts with others. With our public domain, you are guaranteed to find the workout perfect for you and your fitness goals. </p>
-<a className="contentItems btnWhite" href="/login"> start building </a> <a className="learnMoreHeader" href="#usage"> see our model </a>
+<a className="contentItems btnWhite" href="/login"> start building </a> <a className="learnMoreHeader" href="#mission"> see our model </a>
 
 </div>
 </div>
@@ -43,7 +43,7 @@ return (
 {/* Our Mission Section */}
 </section>
 <section> 
-<div className="homepageContentDivs pagesContainer"> 
+<div className="homepageContentDivs pagesContainer" id="mission"> 
 <h2> Our Mission </h2>
 <p> Have you ever wanted to work out but didn’t know what exercises to do? Squats, deadlifts, push-ups… it can all be quite confusing if you’re new to the game. Starting your fitness journey can be overwhelming and intimidating- but it doesn’t need to be. Find the workouts that are right for you, at your own pace.
 </p> 
