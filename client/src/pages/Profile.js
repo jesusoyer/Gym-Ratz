@@ -58,7 +58,7 @@ const Profile = () => {
           {/* once query works turn this on */}
         </div>
 
-        <div className="splinterQuote"> <h3>"The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal." <span> - Master Splinter  {user.workouts[0].reps}</span></h3>
+        <div className="splinterQuote"> <h3>"The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal." <span> - Master Splinter  </span></h3>
         
         </div>
 
