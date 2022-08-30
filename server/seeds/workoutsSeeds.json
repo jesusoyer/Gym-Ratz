@@ -1,22 +1,24 @@
 [
     {
         "workoutAuthor":"Max Kanat-Alexander",
-        "title": "Best chest workout",
-        "exercise": "bench press",
-        "sets": "100",
-        "reps": "50",
-        "weight": "50",
-        "other": "this will kill you"
+        "workoutTitle": "Best chest workout",
+        "exerciseType": "bench press",
+        "sets": "12",
+        "reps": "10",
+        "weight": "100lbs",
+        "description": "an intense workout"
+       
       
     },
     {
         "workoutAuthor":"Brian Kernighan",
-        "title": "Best ab workout",
-        "exercise": "push ups",
-        "sets": "100",
-        "reps": "50",
-        "weight": "50",
-        "other": "death"
+        "workoutTitle": "Best ab workout",
+        "exerciseType": "pull ups",
+        "sets": "20",
+        "reps": "30",
+        "weight": "body weight",
+        "description": "it will kill you"
+       
       
     }
    

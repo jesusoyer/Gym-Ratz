@@ -25,13 +25,13 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
-  console.log("data", data)
+  // console.log("data", data)
 
   const finalData = data ? data : {}
-  console.log("Final Data", finalData)
+  // console.log("Final Data", finalData)
   const user = finalData.me || finalData.user || {};
 
-  console.log("User Data", user)
+  // console.log("User Data", user)
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -74,7 +74,7 @@ const Profile = () => {
           {/* once query works turn this on */}
         </div>
 
-        <div className="splinterQuote"> <h3>“The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal.” <span> - Master Splinter  </span></h3>
+        <div className="splinterQuote"> <h3>"The path that leads to what we truly desire is long and difficult, but only by following that path do we achieve our goal." <span> - Master Splinter  </span></h3>
         </div>
 
       </div>
@@ -90,7 +90,7 @@ const Profile = () => {
         {/* ------ */}
 
         <div>
-          <Outlet />
+          <Outlet context={user} />
         </div>
       </section>
     </main>
@@ -99,7 +99,5 @@ const Profile = () => {
 
 //exports profile page
 export default Profile;
-
-
 
 
