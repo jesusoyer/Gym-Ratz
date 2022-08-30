@@ -65,16 +65,17 @@ Mutation: {
 
 
 
-    addWorkout: async (parent, {workout}) => {
-      const newWorkout = await Workout.create(workout);
-      console.log(workout)
+    addWorkout: async (parent, {workoutAuthor, workoutTitle, exerciseType, sets, reps, weight, description}) => {
+      const newWorkout = await Workout.create({workoutAuthor, workoutTitle, exerciseType, sets, reps, weight, description});
+      console.log(workoutAuthor, workoutTitle, exerciseType, sets, reps, weight, description )
        await User.findOneAndUpdate(
-       { username: workout.workoutAuthor },
-       { $addToSet: { workouts: newWorkout } }
+       { username: workoutAuthor },
+       { $addToSet: { workouts: newWorkout._id } }
 
       );
 
       return newWorkout;
+      
     
       }
     ,
