@@ -129,8 +129,7 @@ const WorkoutForm = () => {
 
 
   return (
-    <div>
-      <h3>Today's grind session</h3>
+    <div className="pagesContainer">
 
       {Auth.loggedIn() ? (
         <>
@@ -142,78 +141,72 @@ const WorkoutForm = () => {
             Character Count: {characterCount}/280
           </p> */}
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={handleFormSubmit}
-          >
-            <div className="col-12 col-lg-9">
-				<label> What is your workouts name?
+            className="addWorkoutForm"
+            onSubmit={handleFormSubmit} >
+
+          <h2> Add A Workout </h2>
+          
+            <div className="workoutFormContainer">
+				<label className="workoutLabel"> What is your workouts name?
               <input
                 name="workoutTitle"
                 placeholder="Here's a new thought..."
                 value={workoutTitle}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                className="form-input"
                 onChange={handleChange}
-              ></input></label>
-					<label> Why type of exercise will you be doing?
+              /></label>
+					<label className="workoutLabel"> Why type of exercise will you be doing?
 			      <input
                 name="exerciseType"
                 placeholder="exercise type"
                 value={exerciseType}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                className="form-input"
                 onChange={handleExerciseChange}
-              ></input></label>
-				<label> How many sets? If none type n/a.
+              /></label>
+				<label className="workoutLabel"> How many sets? If none type n/a.
 			    <input
                 name="sets"
                 placeholder="sets"
                 value={sets}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                className="form-input"
                 onChange={handleSetsChange}
-              ></input></label>
-				<label> How many reps? If none type n/a.
+              /></label>
+				<label className="workoutLabel"> How many reps? If none type n/a.
 				<input
                 name="reps"
                 placeholder="reps"
                 value={reps}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                className="form-input"
                 onChange={handleRepsChange}
-              ></input></label>
-				<label> How much weight? If none type n/a.
+              /></label>
+				<label className="workoutLabel"> How much weight? If none type n/a.
 				<input	
                 name="weight"
                 placeholder="weight"
                 value={weight}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                className="form-input"
                 onChange={handleWeightChange}
-              ></input></label>
-				<label> Workout tips/tricks and information.
+              /></label>
+				<label className="workoutLabel"> Workout tips/tricks and information.
 				<input	
                 name="description"
                 placeholder="description"
                 value={description}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                className="form-input"
                 onChange={handleDescriptionChange}
-              ></input></label>
+              /></label>
 
             </div>
-
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button style={{ cursor: 'pointer' }} type="submit">
                 Add Workout
               </button>
-            </div>
-            {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
+
+          </form>
+          {error && (
+              <div className="errorFormMess">
                 {error.message}
               </div>
             )}
-          </form>
         </>
       ) : (
         <p>
