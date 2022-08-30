@@ -270,12 +270,29 @@ nav {
 .featured-right .queryCards {
   width: 100%;
 }
-/* profile page */
-.queryCards {
-  width: 30%;
+/* workoutList*/
+
+.workoutDataContainer {
+  display: -ms-flexbox;
+  /* max-width: 900px; */
+  -ms-flex-wrap: wrap;
+  display: flex;
+  /* height: 100vw; */
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: flex-end;
+
+}
+
+.workoutCard {
+  width: 50%;
   border: 2px solid black;
-  padding: 50px;
-  margin: 15px;
+  padding: 30px;
+  /* margin-bottom: 20px; */
+}
+
+.queryCardDate {
+  margin-bottom: 10px;
 }
 
 .queriesCardHomepage {
@@ -299,12 +316,15 @@ nav {
 
 .exerciseMiniCard {
   display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
 }
 
 .exerciseMiniCard li {
-  padding-right: 10px ;
+  margin: 10px 10px 0px 0px;
+  padding: 10px;  
+  border: 1px solid rgba(0, 0, 0, 0.26);
 }
-
 
 /* Our Story homepage */
 
@@ -401,3 +421,30 @@ width: 50%;
   border: 2px solid red;
 }
 
+
+.addWorkoutForm {
+  border: 2px solid black;
+  padding: 50px;
+  
+}
+
+.workoutFormContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.workoutLabel  {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  margin:10px
+}
+
+.workoutLabel input {
+  margin: 10px 0 10px 0;
+}
+
+.pagesContainer .errorFormMess  {
+  bottom:0%;
+}

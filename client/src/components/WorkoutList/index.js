@@ -1,14 +1,15 @@
 import React from 'react';
+
 import Typewriter from 'typewriter-effect';
 
-const WorkoutList = () => {
+const WorkoutList  = () => {
 
 
 
 return (
+    <div> 
 
-    <main> 
-    <div className="liveFeed" > 
+<div className="liveFeed" > 
     <h2 > Live Feed</h2> <Typewriter 
     options={{
       strings: [".......",],
@@ -16,46 +17,7 @@ return (
       loop: true,
     }}/>
     </div>
-    <div className="queriesCardHomepage"> 
-   
-    <div className="queryCards">
-        Example: 8/29/22
-      <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
-      <h5 className="queryCardUsername"> @megThee </h5>
-      <hr></hr>
-      <div className="exerciseDataContainer">
-        <div className="exerciseCard"> 
-            <h5> Squats </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs  </li>
-                </ul>
-                <div> other: Take a rest ever 30 sec  </div>
-        </div>
-        <div className="exerciseCard">
-            <h5> Deadlifts </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs </li>
-                </ul>
-                <div> other: Take a rest ever 30 sec  </div>
-        </div>
-        <div className="exerciseCard">
-            <h5> Sumo Squats </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs</li>
-                </ul>
-                <div> other: Take a rest ever 30 sec  </div>
-        </div>
-      </div>
-      </div>
-
     </div>
-    </main>
 )
 }
 
