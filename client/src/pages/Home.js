@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect';
 import backgroundVideoHomePg from '../images/header.mp4';
 import weightIcon from '../images/dumbbell.png';
 
-import OurMission from '../components/Our Mission';
+import OurMission from '../components/OurMission';
 
 // TEST FOR QUERIES NOT WORKING
 // import { useQuery } from '@apollo/client';
