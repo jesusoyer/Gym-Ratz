@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundVideo from '../images/vertheader.mp4';
-import SignUp from './SignUp'
+import SignUp from './signUp'
 
 //css 
 import './pages-styles/forms.css'
