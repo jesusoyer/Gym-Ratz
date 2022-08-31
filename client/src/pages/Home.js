@@ -1,9 +1,6 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 
-//mobile css - don't delete
-import '../styles/Mobile.css';
-
 //assets imports
 import backgroundVideoHomePg from '../images/header.mp4';
 import weightIcon from '../images/dumbbell.png';

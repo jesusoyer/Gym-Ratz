@@ -1,0 +1,151 @@
+/* forms styling */
+
+/* universal form css */
+.formsContainerFlex {
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    height: 75vh;
+  }
+  
+  .mainFormContainer {
+  width: 50%;
+  }
+  
+  .form-input {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  /* form error styling  */
+  .errorFormMess {
+    bottom: 11%;
+    background-color:rgb(172, 255, 131);
+    padding: 20px;
+    border: 2px solid black;
+  }
+  
+  .error-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid red;
+  }
+  
+  .pagesContainer .errorFormMess  {
+    bottom: auto;
+  }
+
+/* login/sign up form page */
+  
+  .loginForm, .signupForm {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    height: 100%;
+  }
+  
+  .loginForm h2, .signupForm h2 {
+    margin-bottom:20px;
+  }
+  
+  .videoHeader {
+    z-index: -1;
+    margin-right: 10px;
+     margin-left: 10px;
+}
+/*  add workout form page  */
+
+  .addWorkoutForm {
+    border: 2px solid black;
+    padding: 50px;
+    
+  }
+  
+  .workoutFormContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .workoutLabel  {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    margin:10px
+  }
+  
+  .workoutLabel input {
+    margin: 10px 0 10px 0;
+  }
+  
+
+  
+  @media only screen and (max-width: 915px) { 
+
+/* Login | Register Form Styling  */
+  
+.formsContainerFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 40px;
+  }
+  
+  .mainFormContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  }
+  
+  .videoHeader {
+    display: none;
+   }
+  
+  .loginForm, .signupForm {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    height: 100%;
+  }
+  
+  .loginForm h2, .signupForm h2 {
+    margin-bottom:20px;
+  }
+  
+  .form-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  .errorFormMess {
+    position: absolute;
+    position: absolute;
+    bottom: 11%;
+    background-color:rgb(172, 255, 131);
+    padding: 20px;
+    border: 2px solid black;
+  }
+  
+  .error-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid red;
+  }
+
+  
+}

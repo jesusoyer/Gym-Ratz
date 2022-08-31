@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 //error assets
 import errorVid from '../images/error.mp4';
 
+//css
+import './pages-styles/404.css'
+
 //if regular 404 pg
 import homeIcon from '../images/landing-page.png'
 import loginIcon from '../images/join.png'
