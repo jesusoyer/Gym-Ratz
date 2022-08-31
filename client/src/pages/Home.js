@@ -94,7 +94,7 @@ return (
                 <ul className="exerciseMiniCard">
                     <li> <span> sets:</span>  1 daily </li>
                     <li> <span> reps:</span>  25 </li>
-                    <li> <span> weigths:</span>  20 lbs (optional) </li>
+                    <li> <span> weight:</span>  20 lbs (optional) </li>
                     <li className="queryDescription"> <span> Description: </span>This challenged is inspired by the one and only MegTheeStallion! Once once a day, taking mini breaks between each set. Happy Squating!</li>
                 </ul>
         </div>

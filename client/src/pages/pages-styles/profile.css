@@ -73,10 +73,24 @@
 
 @media only screen and (max-width: 915px) { 
 
+  .introProfileCard {
+    margin-top: 20px;
+  }
+  
+  .liveFeed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .userNameData {
     width: 70%;
     margin: auto;
     text-align: center;
+  }
+
+  .profileContainer {
+    padding: 25px;
   }
 
   .profileNav {

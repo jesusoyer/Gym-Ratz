@@ -44,7 +44,38 @@ color: white;
 
  @media only screen and (max-width: 915px) { 
 
+  .profile404Container {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    margin: 40px;
+  }
 
+  .errorVideo {
+    display: none;
+  }
+
+  .oops50Left {
+    width: 100%;
+    background: url('../../images/header.gif');
+    background-size: cover;
+  }
+
+  .oops50Right {
+    width: 100%;
+  }
+
+  .oops50innerBox {
+    z-index: 1;
+    /* background-color: black; */
+    /* padding: 60px; */
+  }
+
+  .oops50innerBox h2 {
+    background-color: black;
+    padding: 20px;
+    width: 100%;
+  }
 
 
  }
