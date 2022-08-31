@@ -23,8 +23,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WorkoutList from "./components/LiveFeed";
 import MyWorkouts from "./components/MyWorkouts";
+
 import WorkoutForm from "./pages/AddWorkout";
 import OurMission from "./components/OurMission";
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -41,7 +43,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-
+const cache = new InMemoryCache();
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
@@ -64,6 +66,8 @@ function App() {
     </Route>
     <Route path="/home" element={<Home/>}/>
     <Route path="/login" element={<LoginSignUp/>}/>
+    {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
+    <Route path="/register" element={<LoginSignUp/>}/>
     <Route path="/workout" element={<AddWorkout/>}/>
     <Route path="/profile" element={<Profile/>}>
       <Route path="" element={<MyWorkouts/>}/>
