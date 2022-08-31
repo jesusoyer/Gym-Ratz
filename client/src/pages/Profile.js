@@ -10,7 +10,7 @@ import Auth from '../utils/auth';
 import './pages-styles/profile.css'
 
 //importing 404 page
-import PageNotFound from '../pages/404Page';
+import PageNotFound from './404Page';
 
 //assets
 import Mikey from '../images/michaelangelo.png';
