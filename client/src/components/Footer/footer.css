@@ -1,0 +1,39 @@
+/* Footer Styling */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+  }
+  footer img {
+    width: 50px;
+  }
+  
+  .footerItem {
+    margin: 10px;
+  }
+
+
+
+/* MOBILE DESIGN */
+
+@media only screen and (max-width: 915px) { 
+  /* Footer Styling */
+  
+  /* footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+  }
+  footer img {
+    width: 20px;
+  }
+  
+  .footerItem {
+    margin: 10px;
+  }
+   */
+
+}

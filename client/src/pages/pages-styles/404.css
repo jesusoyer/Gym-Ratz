@@ -1,0 +1,50 @@
+.profile404Container {
+    height: 600px;
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    border: 3px solid black;
+}
+
+.oops50Left {
+  width: 50%;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color:rgba(0, 0, 0, 0.705);
+}
+
+.oops50innerBox  {
+display: flex;
+flex-direction: column;
+color: white;
+}
+
+.oops50innerBox h2 {
+  width: 70%;
+}
+
+.oops50Right {
+  width: 50%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.errorVideo {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+ }
+
+ @media only screen and (max-width: 915px) { 
+
+
+
+
+ }
