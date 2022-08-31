@@ -22,6 +22,7 @@ function Home(){
 // console.log("tell me this is working", usertwo)
 // console.log("?????", finalData)
 
+const today = new Date();
 
 return (
 //home page content goes here
@@ -62,10 +63,10 @@ return (
 
 {/* Featured Workouts Section */}
 
-<section className="homepageContentDivs featuredContainer">
+<section className="homepageContentDivs featuredHomeContainer">
 
-  <div className="pagesContainer featuredWorkoutCard"> 
-  <div className="featured-left"> 
+  <div className="pagesContainer featuredHome"> 
+  <div className="featured-left-home"> 
   {/* <img src={masterSplinterIcon} alt="weight-icon" width="70px"/> */}
   <img src={weightIcon} alt="weight-icon" width="70px"/>
     <div className="featuredH2"> 
@@ -83,26 +84,25 @@ return (
   <img src={weightIcon} alt="weight-icon" width="70px" className="secondDumbellImg"/>
   </div>
 
-  <div className="featured-right"> 
+  <div className="featured-right-home"> 
   <h2> workout of the day: </h2>
-  {/* fake card for mockup */}
-  <div className="queryCards">
+  <div className="mock-query-card"> 
+  <p className="queryCardDate"> {today.toLocaleDateString()} </p>
   <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
       <h5 className="queryCardUsername"> @megThee </h5>
       <hr></hr>
       <div className="exerciseDataContainer">
         <div className="exerciseCard"> 
-            <h5> Squats </h5>
+            <h5> 2022 Summer Squat Challenge </h5>
                 <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs  </li>
-                    <li> Description: Take a rest ever 30 sec  </li>
+                    <li> <span> sets:</span>  1 daily </li>
+                    <li> <span> reps:</span>  25 </li>
+                    <li> <span> weigths:</span>  20 lbs (optional) </li>
+                    <li className="queryDescription"> <span> Description: </span>This challenged is inspired by the one and only MegTheeStallion! Once once a day, taking mini breaks between each set. Happy Squating!</li>
                 </ul>
         </div>
       </div>
   </div>
-    {/* fake card for mockup */}
   </div>
   </div>
 </section>

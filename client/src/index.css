@@ -31,7 +31,7 @@ code {
     color:rgb(172, 255, 131)
   }
 
-  .featuredWorkoutCard .Typewriter, .liveFeed .Typewriter {
+  .featured-left-home .Typewriter, .liveFeed .Typewriter {
     font-size: 20px;
     color: black!important;
   }
@@ -46,16 +46,16 @@ code {
   }
 
   h4 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   h5 {
-    font-size: 16px;
+    font-size: 18px;
   }
   
   p {
     margin-top: 20px;
-    line-height: 1.5em;
+    line-height: 1.6em;
     font-size: 16px;
   }
 

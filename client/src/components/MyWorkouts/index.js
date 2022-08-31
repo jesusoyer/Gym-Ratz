@@ -56,7 +56,7 @@ return (
         return  (
             
     <div  className="workoutCard" key={workout.id}>
-                <p className="queryCardDate"> {today.toLocaleDateString()} </p>
+            <p className="queryCardDate"> {today.toLocaleDateString()} </p>
             <h4 className="queryCardTitle" > {workout.title} </h4>
             <h5 className="queryCardUsername"> @{rawData.username}</h5>
             <hr></hr>
@@ -64,10 +64,10 @@ return (
                 <div className="exerciseCard">
                     <h5> Exercise: {workout.type} </h5>
                         <ul className="exerciseMiniCard">
-                            <li> sets: {workout.sets}  </li>
-                            <li> reps: {workout.reps} </li>
-                            <li> weight: {workout.weight} lbs  </li>
-                            <li>Description: {workout.description}  </li>
+                            <li> <span> sets:</span> {workout.sets}  </li>
+                            <li> <span> reps: </span>  {workout.reps} </li>
+                            <li> <span> weight:</span>  {workout.weight} lbs  </li>
+                            <li className="queryDescription">Description: {workout.description}  </li>
                         </ul>
                 </div>
             </div>

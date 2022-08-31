@@ -139,20 +139,16 @@ button {
 
 /* Featured Workouts Homepage*/
 
-.featuredContainer {
+.featuredHomeContainer {
   background-color:rgba(172, 255, 131, 0.377);
   padding: 60px;
-  /* background-image: url('./images/boxing-gloves.png');
-  background-size: 70px;
-  background-position:  0 0;
-  background-repeat:no-repeat; */
 }
 
 .featuredH2 h2 {
   padding: 5px;
 }
 
-.featuredWorkoutCard {
+.featuredHome {
   display: flex;
   align-items: baseline;
 }
@@ -160,31 +156,31 @@ button {
   transform: scaleX(-1);
 }
 
-.featured-left {
-  width: 50%;
+.featured-left-home {
   text-align: center;
   background-color: white;
-  padding: 50px;
+  padding: 60px;
+  width: 50%;
  }
 
-.featured-right {
+.featured-right-home {
   width: 50%;
 }
 
-.featured-right h2 {
+.featured-right-home h2 {
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
 /* Query cards  */
 
-.featured-right .queryCards {
+.featured-right-home .mock-query-card {
   width: 100%;
 }
 
-.queriesCardHomepage {
-  display: flex;
-  flex-wrap: wrap;
+.mock-query-card {
+  border: 2px solid black;
+  padding: 50px;
 }
 
 
