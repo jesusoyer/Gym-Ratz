@@ -6,6 +6,14 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
+
+//css 
+import './pages-styles/profile.css'
+
+//importing 404 page
+import PageNotFound from './404Page';
+
+
 //assets
 import Mikey from '../images/michaelangelo.png';
 import Saved from '../images/love.png';
