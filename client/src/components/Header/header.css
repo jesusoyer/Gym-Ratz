@@ -38,9 +38,12 @@ nav {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
+.navLinks{
+  padding:0px
+}
   .navLinks a {
     margin: 10px;
     color: black;

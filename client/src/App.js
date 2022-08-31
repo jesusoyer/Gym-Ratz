@@ -61,10 +61,11 @@ function App() {
 
   {/* dynamic pages */}
   <Routes> 
-    <Route path="/" element={<Home/>}> 
+    <Route path="/home" element={<Home/>}> 
       <Route path="#mission" element={<OurMission/>}/>
     </Route>
     <Route path="/home" element={<Home/>}/>
+    <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<LoginSignUp/>}/>
     {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
     <Route path="/register" element={<LoginSignUp/>}/>
