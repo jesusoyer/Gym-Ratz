@@ -194,13 +194,14 @@ const WorkoutForm = () => {
               <button style={{ cursor: 'pointer' }} type="submit">
                 Add Workout
               </button>
-
-          </form>
-          {error && (
+              
+              {error && (
               <div className="errorFormMess">
                 {error.message}
               </div>
             )}
+          </form>
+
         </>
       ) : (
         <>

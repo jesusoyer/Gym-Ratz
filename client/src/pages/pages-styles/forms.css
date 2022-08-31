@@ -38,7 +38,7 @@
   /* form error styling  */
   .errorFormMess {
     margin-top: 20px;
-    background-color:#ff484844;
+    background-color:#ffd2d2;
     padding: 20px;
     /* border: 2px solid #ff4848; */
   }
@@ -51,10 +51,6 @@
     border: 2px solid #ee8080;
   }
   
-  .pagesContainer .errorFormMess  {
-    bottom: auto;
-  }
-
 /* login/sign up form page */
   
   .loginForm, .signupForm {
@@ -145,20 +141,9 @@
   }
   
   .errorFormMess {
-    position: absolute;
-    position: absolute;
-    bottom: 11%;
-    background-color:rgb(172, 255, 131);
+    background-color:#ffd2d2;
     padding: 20px;
     border: 2px solid black;
-  }
-  
-  .error-input {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid red;
   }
 
   

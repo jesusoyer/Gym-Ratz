@@ -15,6 +15,7 @@ const Login = (props) => {
         const [formState, setFormState] = useState({ email:'', password:''});
         const [login, {error, data}] = useMutation( LOGIN_USER);
 
+        //error state for color change of inputs
         const [isError, setErrorState] = useState(false);
     
         //update state based on from input changes
@@ -48,6 +49,8 @@ const Login = (props) => {
           });
     };
 
+
+
 return (
 //react form goes here
 <main className="pagesContainer formsContainerFlex" > 
@@ -61,6 +64,7 @@ return (
 
     <form onSubmit= {handleFormSubmit} className="loginForm" >
     <h2> Login </h2>
+
         <label> Email: 
         <input className={isError ? 'error-input' : 'form-input'} placeholder="email" name="email" type="email" value={formState.email} onChange={handleChange}/>
         </label>
@@ -68,18 +72,18 @@ return (
         <input className={isError ? 'error-input' : 'form-input'} placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/> </label>
 
         <button style={{ cursor: 'pointer' }} type="submit"> Login </button>
-       
+        
         {error && (
-                <div className="errorFormMess">
-                    {error.message}
-                </div>
-                )}
-
+        <div className="errorFormMess">
+            {error.message}
+        </div>
+        )}
     </form>
-    )}
-
-
+    )}     
     </section>
+
+
+
     <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
     <SignUp/>
 </main>

@@ -15,6 +15,8 @@ const Signup = () => {
     });
     const [addUser, { error, data }] = useMutation(ADD_USER);
   
+    
+
     const handleChange = (event) => {
       const { name, value } = event.target;
   
@@ -90,7 +92,7 @@ const Signup = () => {
                   {error.message}
                 </div>
               )}
-              
+
                 </form>
               )}
   
