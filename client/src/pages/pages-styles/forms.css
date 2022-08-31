@@ -67,9 +67,10 @@
   }
   
   .videoHeader {
-    z-index: -1;
+    /* z-index: -1;
     margin-right: 10px;
-     margin-left: 10px;
+     margin-left: 10px; */
+     display: none;
 }
 /*  add workout form page  */
 

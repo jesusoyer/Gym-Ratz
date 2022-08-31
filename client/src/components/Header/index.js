@@ -30,7 +30,7 @@ const Header = () => {
         ) : ( 
         <>
 
-        <a href="/home/#mission"> our mission </a>
+        <a href="/#mission"> our mission </a>
         <Link to="login"> login + register </Link>
         
         </>
