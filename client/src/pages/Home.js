@@ -1,18 +1,31 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 
-//mobile css - don't delete
-import '../styles/Mobile.css';
-
 //assets imports
 import backgroundVideoHomePg from '../images/header.mp4';
 import weightIcon from '../images/dumbbell.png';
-// import masterSplinterIcon from '../images/splinter.png'
 
-//For 1 Featured Workout (mockup)
-// import WorkoutList from '../components/WorkoutList';
+import OurMission from '../components/Our Mission';
+
+// TEST FOR QUERIES NOT WORKING
+// import { useQuery } from '@apollo/client';
+// import { QUERY_WORKOUTS } from '../utils/queries';
+
 
 function Home(){
+
+// TEST FOR QUERIES NOT WORKING
+//   const { data } = useQuery(QUERY_WORKOUTS);
+
+// const finalData = data ? data : {}
+// // console.log("Final Data", finalData)
+// const usertwo = finalData.workouts || [];
+
+// console.log("tell me this is working", usertwo)
+// console.log("?????", finalData)
+
+const today = new Date();
+
 return (
 //home page content goes here
 <main> 
@@ -39,23 +52,18 @@ return (
 </div>
 
 </div>
-
-{/* Our Mission Section */}
 </section>
+{/* Our Mission Section */}
 <section> 
-<div className="homepageContentDivs pagesContainer" id="mission"> 
-<h2> Our Mission </h2>
-<p> Have you ever wanted to work out but didn’t know what exercises to do? Squats, deadlifts, push-ups… it can all be quite confusing if you’re new to the game. Starting your fitness journey can be overwhelming and intimidating- but it doesn’t need to be. Find the workouts that are right for you, at your own pace.
-</p> 
-<p className="ctaHomepage">Sign up for an account today to be part of our Gym Ratz family! <a className="btn" href="/login"> start building </a> </p> 
-</div>
+
+  <OurMission/>
 
 {/* Featured Workouts Section */}
 
-<section className="homepageContentDivs featuredContainer">
+<section className="homepageContentDivs featuredHomeContainer">
 
-  <div className="pagesContainer featuredWorkoutCard"> 
-  <div className="featured-left"> 
+  <div className="pagesContainer featuredHome"> 
+  <div className="featured-left-home"> 
   {/* <img src={masterSplinterIcon} alt="weight-icon" width="70px"/> */}
   <img src={weightIcon} alt="weight-icon" width="70px"/>
     <div className="featuredH2"> 
@@ -73,44 +81,25 @@ return (
   <img src={weightIcon} alt="weight-icon" width="70px" className="secondDumbellImg"/>
   </div>
 
-  <div className="featured-right"> 
+  <div className="featured-right-home"> 
   <h2> workout of the day: </h2>
-  {/* fake card for mockup */}
-  <div className="queryCards">
-      <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
+  <div className="mock-query-card"> 
+  <p className="queryCardDate"> {today.toLocaleDateString()} </p>
+  <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
       <h5 className="queryCardUsername"> @megThee </h5>
       <hr></hr>
       <div className="exerciseDataContainer">
         <div className="exerciseCard"> 
-            <h5> Squats </h5>
+            <h5> 2022 Summer Squat Challenge </h5>
                 <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs  </li>
+                    <li> <span> sets:</span>  1 daily </li>
+                    <li> <span> reps:</span>  25 </li>
+                    <li> <span> weigths:</span>  20 lbs (optional) </li>
+                    <li className="queryDescription"> <span> Description: </span>This challenged is inspired by the one and only MegTheeStallion! Once once a day, taking mini breaks between each set. Happy Squating!</li>
                 </ul>
-                {/* <div> other: Take a rest ever 30 sec  </div> */}
-        </div>
-        <div className="exerciseCard">
-            <h5> Deadlifts </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs </li>
-                </ul>
-                <div> other: Don't forget to keep a leveled back.  </div>
-        </div>
-        <div className="exerciseCard">
-            <h5> Sumo Squats </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 15 lbs</li>
-                </ul>
-                <div> other: Take a rest ever 30 sec. Repeat 3 times  </div>
         </div>
       </div>
-      </div>
-    {/* fake card for mockup */}
+  </div>
   </div>
   </div>
 </section>

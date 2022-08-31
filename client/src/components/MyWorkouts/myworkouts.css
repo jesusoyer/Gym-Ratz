@@ -1,0 +1,124 @@
+.workoutDataContainer {
+    display: flex;
+    align-content: center;
+    flex-direction: row-reverse;
+  
+  }
+  
+  .workoutCard {
+    width: 50%;
+    border: 2px solid black;
+    padding: 30px;
+    margin: 10px;
+  }
+  
+  .queryCardDate {
+    margin-bottom: 10px;
+  }
+  
+  .queriesCardHomepage {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .queryCardUsername {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .exerciseDataContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .exerciseCard {
+    margin-top: 10px;
+  }
+
+  .exerciseCard h5 {
+    margin-bottom: 10px;
+  }
+  
+  .exerciseMiniCard {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+  }
+  
+  .exerciseMiniCard li {
+    margin: 10px 10px 0px 0px;
+    padding: 15px;  
+    border: 1px solid rgba(0, 0, 0, 0.26);
+  }
+
+  .exerciseMiniCard span {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-style: italic;
+    text-decoration: underline dashed 2px; 
+  }
+
+  .queryDescription {
+    line-height: 1.6em;
+  }
+  
+  .mockQuery {
+    display: flex;
+    opacity: .2;
+  }
+
+  .mockQuery .mock-query-card {
+    margin: 15px;
+  }
+
+  @media only screen and (max-width: 915px) {  
+/* Query cards  */
+  
+hr {
+    display: none;
+}
+
+.queryCards {
+  width: 100%;
+  border: 2px solid black;
+  padding: 30px;
+}
+
+.queryCardUsername {
+  margin-bottom: 10px;
+}
+
+.exerciseDataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.exerciseCard {
+  margin-top: 10px;
+}
+
+.exerciseCard div {
+  margin-bottom: 15px;
+}
+
+.exerciseCard h5 {
+  border-top: 2px dashed black;
+  padding-top: 15px;
+}
+
+.exerciseMiniCard {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+
+.exerciseMiniCard li {
+  margin: 10px 10px 0px 0px;
+  padding: 10px;  
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+
+}

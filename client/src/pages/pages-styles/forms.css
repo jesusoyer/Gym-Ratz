@@ -1,0 +1,145 @@
+/* forms styling */
+.formsContainerFlex {
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    height: 75vh;
+  }
+  
+  .mainFormContainer {
+  width: 50%;
+  }
+  
+  .form-input {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+
+  label{
+      width: 100%;
+  }
+
+  /* form buttons */
+.formsContainerFlex button, .addWorkoutForm button {
+    border: 2px solid black;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* form error styling  */
+  .errorFormMess {
+    margin-top: 20px;
+    background-color:#ffd2d2;
+    padding: 20px;
+    /* border: 2px solid #ff4848; */
+  }
+  
+  .error-input {
+    background-color: rgba(192, 192, 192, 0);
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #ee8080;
+  }
+  
+/* login/sign up form page */
+  
+  .loginForm, .signupForm {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    height: 100%;
+  }
+  
+  .loginForm h2, .signupForm h2 {
+    margin-bottom:20px;
+  }
+  
+  .videoHeader {
+    z-index: -1;
+    margin-right: 10px;
+     margin-left: 10px;
+}
+/*  add workout form page  */
+
+  .addWorkoutForm {
+    border: 2px solid black;
+    padding: 50px;
+    
+  }
+
+  .addWorkoutForm h2 {
+      margin-bottom: 20px;
+  }
+  
+  .workoutFormContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .workoutFormContainer label{
+    width: 50%;
+    padding: 0px 5px 0 5px;
+  }
+  
+  @media only screen and (max-width: 915px) { 
+
+/* Login | Register Form Styling  */
+  
+.formsContainerFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 40px;
+  }
+  
+  .mainFormContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  }
+  
+  .videoHeader {
+    display: none;
+   }
+  
+  .loginForm, .signupForm {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    height: 100%;
+  }
+  
+  .loginForm h2, .signupForm h2 {
+    margin-bottom:20px;
+  }
+
+  /* workout form  */
+
+  .workoutFormContainer label{
+    width: 100%;
+    padding: auto;
+  }
+  
+  .errorFormMess {
+    background-color:#ffd2d2;
+    padding: 20px;
+    border: 2px solid black;
+  }
+
+  
+}

@@ -14,7 +14,10 @@ const Signup = () => {
       password: '',
     });
     const [addUser, { error, data }] = useMutation(ADD_USER);
-  
+
+    //error state for color change of inputs
+    const [isError, setErrorState] = useState(false);
+
     const handleChange = (event) => {
       const { name, value } = event.target;
   
@@ -36,6 +39,11 @@ const Signup = () => {
         Auth.login(data.addUser.token);
       } catch (e) {
         console.error(e);
+
+//setting error state for color change of inputs
+
+           setErrorState(true)
+            console.log(setErrorState)
       }
     };
   
@@ -52,7 +60,7 @@ const Signup = () => {
                 <h2> Sign Up </h2>
                 <label> Username:
                   <input
-                    className="form-input"
+                    className={isError ? 'error-input' : 'form-input'}
                     placeholder="username"
                     name="username"
                     type="text"
@@ -61,7 +69,7 @@ const Signup = () => {
                   />  </label>
                   <label> Email: 
                   <input
-                    className="form-input"
+                    className={isError ? 'error-input' : 'form-input'}
                     placeholder="email"
                     name="email"
                     type="email"
@@ -70,7 +78,7 @@ const Signup = () => {
                   /> </label>
                   <label> Password: 
                   <input
-                    className="form-input"
+                    className={isError ? 'error-input' : 'form-input'}
                     placeholder="******"
                     name="password"
                     type="password"
@@ -84,14 +92,16 @@ const Signup = () => {
                   >
                     Submit
                   </button>
-                </form>
-              )}
-  
-              {error && (
+
+                  {error && (
                 <div className="errorFormMess">
                   {error.message}
                 </div>
               )}
+
+                </form>
+              )}
+  
 
       </section>
     );

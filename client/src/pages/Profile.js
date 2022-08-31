@@ -6,16 +6,12 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
-
-
-
 //assets
 import Mikey from '../images/michaelangelo.png';
 import Saved from '../images/love.png';
 import AddIcon from '../images/pencil.png';
 import Pin from '../images/cheese.png';
 import AllWorkoutsIcons from '../images/dumbbell.png'
-
 
 //404 
 import forOfor from '../images/error-404.png'
@@ -35,7 +31,7 @@ const Profile = () => {
   // console.log("Final Data", finalData)
   const user = finalData.me || finalData.user || {};
 
-  
+  // console.log("User Data", user)
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -61,14 +57,11 @@ const Profile = () => {
       <div className="featured-right featuredRight-profile">
             <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
             <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
-           
-            
                 <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
             </div>
       </div>
 
     );
-    
   }
 
   return (
@@ -77,7 +70,7 @@ const Profile = () => {
       <div className="introProfileCard">
         <div className="helloUsername">
           <img src={Mikey} alt="logo" width="45px" />
-          <h2> Welcome Back, {userParam ? `${user.username}` : user.username}! </h2>
+          <h2 className="userNameData" > Welcome Back, <span> {userParam ? `${user.username}` : user.username}! </span> </h2>
           {/* once query works turn this on */}
         </div>
 
@@ -89,12 +82,11 @@ const Profile = () => {
 
       </div>
 
-      <section className="homepageContentDivs featuredContainer">
+      <section className="profileContainer">
         <div className="profileNavContainer">
           <Link className="profileNav" to="/profile"> <img src={AllWorkoutsIcons} alt="weights" width="36px" />  workouts </Link>
           <Link className="profileNav" to="/profile/myworkouts"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
           <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px" />  add a workout </Link>
-          
           <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px" /> saved (coming soon) </h5>
         </div>
 

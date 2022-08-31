@@ -1,6 +1,8 @@
 import React from 'react';
 import Splinter from '../../images/splinter.png'
 
+import '../Footer/footer.css'
+
 const Footer = () => {
     return (
        <footer>
