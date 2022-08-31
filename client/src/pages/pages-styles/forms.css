@@ -1,6 +1,4 @@
 /* forms styling */
-
-/* universal form css */
 .formsContainerFlex {
     display: flex;
     justify-content: space-evenly;
@@ -26,9 +24,10 @@
   }
 
   /* form buttons */
-.formsContainerFlex button {
+.formsContainerFlex button, .addWorkoutForm button {
     border: 2px solid black;
     width: 100%;
+    margin-top: 10px;
     padding: 10px;
     background-color: transparent;
     text-decoration: none;
@@ -44,6 +43,7 @@
   }
   
   .error-input {
+    background-color: rgba(192, 192, 192, 0);
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -78,6 +78,10 @@
     padding: 50px;
     
   }
+
+  .addWorkoutForm h2 {
+      margin-bottom: 20px;
+  }
   
   .workoutFormContainer {
     display: flex;
@@ -85,18 +89,10 @@
     justify-content: center;
   }
   
-  .workoutLabel  {
-    display: flex;
-    flex-wrap: wrap;
-    width: 45%;
-    margin:10px
+  .workoutFormContainer label{
+    width: 50%;
+    padding: 0px 5px 0 5px;
   }
-  
-  .workoutLabel input {
-    margin: 10px 0 10px 0;
-  }
-  
-
   
   @media only screen and (max-width: 915px) { 
 
@@ -131,13 +127,12 @@
   .loginForm h2, .signupForm h2 {
     margin-bottom:20px;
   }
-  
-  .form-input {
+
+  /* workout form  */
+
+  .workoutFormContainer label{
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid black;
+    padding: auto;
   }
   
   .errorFormMess {

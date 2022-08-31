@@ -24,6 +24,7 @@ const WorkoutForm = () => {
         const { workouts } = cache.readQuery({ query: QUERY_WORKOUTS });
 		console.log(workouts)
 
+
         cache.writeQuery({
           query: QUERY_WORKOUTS,
           data: { workouts: [addWorkout, ...workouts] },
@@ -41,6 +42,10 @@ const WorkoutForm = () => {
       }); console.log("me is hit")
     },
   });
+
+//error state for color change of inputs
+const [isError, setErrorState] = useState(false);
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -68,7 +73,9 @@ const WorkoutForm = () => {
 
     } catch (err) {
       console.error(err);
-	 
+    //setting error state for color change of inputs
+    setErrorState(true)
+    console.log(setErrorState)
     }
   };
 
@@ -140,53 +147,53 @@ const WorkoutForm = () => {
 
           <h2> Add A Workout </h2>
           
-            <div className="workoutFormContainer">
-				<label className="workoutLabel"> What is your workouts name?
+        <div className="workoutFormContainer">
+				<label> What is your workouts name?
               <input
                 name="workoutTitle"
                 placeholder="Here's a new thought..."
                 value={workoutTitle}
-                className="form-input"
+                className={isError ? 'error-input' : 'form-input'}
                 onChange={handleChange}
               /></label>
-					<label className="workoutLabel"> Why type of exercise will you be doing?
+					<label> Why type of exercise will you be doing?
 			      <input
                 name="exerciseType"
                 placeholder="exercise type"
                 value={exerciseType}
-                className="form-input"
+                className={isError ? 'error-input' : 'form-input'}
                 onChange={handleExerciseChange}
               /></label>
-				<label className="workoutLabel"> How many sets? If none type n/a.
+				<label> How many sets? If none type n/a.
 			    <input
                 name="sets"
                 placeholder="sets"
                 value={sets}
-                className="form-input"
+                className={isError ? 'error-input' : 'form-input'}
                 onChange={handleSetsChange}
               /></label>
-				<label className="workoutLabel"> How many reps? If none type n/a.
+				<label> How many reps? If none type n/a.
 				<input
                 name="reps"
                 placeholder="reps"
                 value={reps}
-                className="form-input"
+                className={isError ? 'error-input' : 'form-input'}
                 onChange={handleRepsChange}
               /></label>
-				<label className="workoutLabel"> How much weight? If none type n/a.
+				<label> How much weight? If none type n/a.
 				<input	
                 name="weight"
                 placeholder="weight"
                 value={weight}
-                className="form-input"
+                className={isError ? 'error-input' : 'form-input'}
                 onChange={handleWeightChange}
               /></label>
-				<label className="workoutLabel"> Workout tips/tricks and information.
+				<label> Workout tips/tricks and information.
 				<input	
                 name="description"
                 placeholder="description"
                 value={description}
-                className="form-input"
+                className={isError ? 'error-input' : 'form-input'}
                 onChange={handleDescriptionChange}
               /></label>
 
@@ -194,7 +201,7 @@ const WorkoutForm = () => {
               <button style={{ cursor: 'pointer' }} type="submit">
                 Add Workout
               </button>
-              
+
               {error && (
               <div className="errorFormMess">
                 {error.message}

@@ -10,6 +10,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import { set } from 'mongoose';
 
 const Login = (props) => {
         const [formState, setFormState] = useState({ email:'', password:''});
@@ -39,6 +40,7 @@ const Login = (props) => {
         } catch (e) {
             console.error(e);
 
+    //setting error state for color change of inputs
             setErrorState(true)
             console.log(setErrorState)
         }
@@ -47,6 +49,7 @@ const Login = (props) => {
             email: '',
             password: '',
           });
+
     };
 
 

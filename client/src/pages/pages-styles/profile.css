@@ -1,5 +1,11 @@
 /* profile version */
 
+.profileContainer {
+  background-color: rgba(172, 255, 131, 0.377);
+  margin-bottom: 60px;
+  padding: 50px;
+}
+
 .introProfileCard {
     display: flex;
     flex-direction: column;

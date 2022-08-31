@@ -61,7 +61,7 @@ const Profile = () => {
 
       </div>
 
-      <section className="homepageContentDivs featuredContainer">
+      <section className="profileContainer">
         <div className="profileNavContainer">
         <Link className="profileNav" to="/profile"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
           <Link to="/profile/workout" className="profileNav"> <img src={AddWorkoutIcon} alt="heart" width="30px" />  add a workout </Link>
