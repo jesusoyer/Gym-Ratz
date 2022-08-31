@@ -1,0 +1,50 @@
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    align-items: center;
+  }
+  
+  .navLinks {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .navLinks a {
+    margin-right: 15px;
+    color: black;
+  
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+  }
+  
+  .logo h2 {
+    padding-right: 0px;
+  }
+
+  @media only screen and (max-width: 915px) { 
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+  .navLinks a {
+    margin: 10px;
+    color: black;
+  }
+
+  }
+  

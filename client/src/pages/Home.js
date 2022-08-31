@@ -7,12 +7,25 @@ import '../styles/Mobile.css';
 //assets imports
 import backgroundVideoHomePg from '../images/header.mp4';
 import weightIcon from '../images/dumbbell.png';
-// import masterSplinterIcon from '../images/splinter.png'
 
-//For 1 Featured Workout (mockup)
-// import WorkoutList from '../components/WorkoutList';
+// TEST FOR QUERIES NOT WORKING
+// import { useQuery } from '@apollo/client';
+// import { QUERY_WORKOUTS } from '../utils/queries';
+
 
 function Home(){
+
+// TEST FOR QUERIES NOT WORKING
+//   const { data } = useQuery(QUERY_WORKOUTS);
+
+// const finalData = data ? data : {}
+// // console.log("Final Data", finalData)
+// const usertwo = finalData.workouts || [];
+
+// console.log("tell me this is working", usertwo)
+// console.log("?????", finalData)
+
+
 return (
 //home page content goes here
 <main> 
@@ -77,7 +90,7 @@ return (
   <h2> workout of the day: </h2>
   {/* fake card for mockup */}
   <div className="queryCards">
-      <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
+  <h4 className="queryCardTitle" > Hot Girl Summer Shred </h4>
       <h5 className="queryCardUsername"> @megThee </h5>
       <hr></hr>
       <div className="exerciseDataContainer">
@@ -87,29 +100,11 @@ return (
                     <li> sets: 3 </li>
                     <li> reps: 8 </li>
                     <li> weigths: 20 lbs  </li>
+                    <li> Description: Take a rest ever 30 sec  </li>
                 </ul>
-                {/* <div> other: Take a rest ever 30 sec  </div> */}
-        </div>
-        <div className="exerciseCard">
-            <h5> Deadlifts </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 20 lbs </li>
-                </ul>
-                <div> other: Don't forget to keep a leveled back.  </div>
-        </div>
-        <div className="exerciseCard">
-            <h5> Sumo Squats </h5>
-                <ul className="exerciseMiniCard">
-                    <li> sets: 3 </li>
-                    <li> reps: 8 </li>
-                    <li> weigths: 15 lbs</li>
-                </ul>
-                <div> other: Take a rest ever 30 sec. Repeat 3 times  </div>
         </div>
       </div>
-      </div>
+  </div>
     {/* fake card for mockup */}
   </div>
   </div>

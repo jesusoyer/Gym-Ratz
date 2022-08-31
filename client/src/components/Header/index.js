@@ -4,6 +4,10 @@ import logo from '../../images/rat.png';
 
 import Auth from '../../utils/auth';
 
+import '../Header/header.css'
+
+// import { HashLink as Link } from 'react-router-hash-link';
+
 const Header = () => {
     const logout = (event) => {
         event.preventDefault();
@@ -18,16 +22,16 @@ const Header = () => {
 
         {Auth.loggedIn() ? (
             <>
+            <Link to="/"> home </Link>
            <Link to="profile"> profile </Link>
-            <Link to="workout"> add workout </Link>
-            <a className="btn" onClick={logout}>
-                logout
-            </a>
+            <button className="btn" onClick={logout}> logout </button>
             </>
 
         ) : ( 
         <>
-        <a href="#mission"> our story </a>
+
+        {/* <a href="#mission"> mission </a> */}
+        <Link to="/"> our mission</Link>
         <Link to="login"> login + register </Link>
         
         </>

@@ -54,41 +54,6 @@ button {
   color: black;
 }
 
-
-
-/* Navigation Styling */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 20px 20px;
-  align-items: center;
-}
-
-.navLinks {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  padding: 20px;
-}
-
-.navLinks a {
-  margin-right: 15px;
-  color: black;
-
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-  margin-left: 10px;
-}
-
-.logo h2 {
-  padding-right: 0px;
-}
-
 /* Home Page Styling  */
 
 .headerContainer {
@@ -264,67 +229,50 @@ nav {
   display: flex;
 }
 
-/* Query cards  */
-
-/* homepage version */
-.featured-right .queryCards {
-  width: 100%;
-}
-/* workoutList*/
-
-.workoutDataContainer {
-  display: -ms-flexbox;
-  /* max-width: 900px; */
-  -ms-flex-wrap: wrap;
-  display: flex;
-  /* height: 100vw; */
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: flex-end;
-
+.profile404Container {
+    height: 600px;
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    border: 3px solid black;
 }
 
-.workoutCard {
+.oops50Left {
   width: 50%;
-  border: 2px solid black;
-  padding: 30px;
-  /* margin-bottom: 20px; */
-}
-
-.queryCardDate {
-  margin-bottom: 10px;
-}
-
-.queriesCardHomepage {
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+  background-color:rgba(0, 0, 0, 0.705);
 }
 
-.queryCardUsername {
-  margin-top: 10px;
+.oops50innerBox  {
+display: flex;
+flex-direction: column;
+color: white;
 }
 
-.exerciseDataContainer {
+.oops50innerBox h2 {
+  width: 70%;
+}
+
+.oops50Right {
+  width: 50%;
+  padding: 60px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
-.exerciseCard {
-  margin-top: 10px;
-}
+.errorVideo {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+ }
 
-.exerciseMiniCard {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 15px;
-}
-
-.exerciseMiniCard li {
-  margin: 10px 10px 0px 0px;
-  padding: 10px;  
-  border: 1px solid rgba(0, 0, 0, 0.26);
-}
 
 /* Our Story homepage */
 
@@ -348,21 +296,7 @@ background-position: center;
 }
 
 
-/* Footer Styling */
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 25px;
-}
-footer img {
-  width: 50px;
-}
-
-.footerItem {
-  margin: 10px;
-}
 
 /* Login | Register Form Styling  */
 
@@ -397,6 +331,7 @@ width: 50%;
 }
 
 .form-input {
+  background-color: transparent;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -405,8 +340,6 @@ width: 50%;
 }
 
 .errorFormMess {
-  position: absolute;
-  position: absolute;
   bottom: 11%;
   background-color:rgb(172, 255, 131);
   padding: 20px;
@@ -446,5 +379,6 @@ width: 50%;
 }
 
 .pagesContainer .errorFormMess  {
-  bottom:0%;
+  bottom: auto;
 }
+

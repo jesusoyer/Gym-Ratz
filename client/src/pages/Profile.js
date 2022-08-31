@@ -6,16 +6,15 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
+//importing 404 page
+import PageNotFound from '../pages/404Page';
+
 //assets
 import Mikey from '../images/michaelangelo.png';
 import Saved from '../images/love.png';
-import AddIcon from '../images/pencil.png';
-import Pin from '../images/cheese.png';
-import AllWorkoutsIcons from '../images/dumbbell.png'
-
-//404 
-import forOfor from '../images/error-404.png'
-
+import GetAllWorkoutsIcon from '../images/dumbbell.png';
+import ComingSoonIcon from '../images/cheese.png';
+import AddWorkoutIcon from '../images/pencil.png'
 
 const Profile = () => {
 
@@ -31,8 +30,6 @@ const Profile = () => {
   // console.log("Final Data", finalData)
   const user = finalData.me || finalData.user || {};
 
-  // console.log("User Data", user)
-
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile" />;
@@ -43,25 +40,7 @@ const Profile = () => {
   }
 
   if (!user.username) {
-    return (
-      
-      <div className="featuredWorkoutCard-profile"> 
-      
-      <div className="featured-left"> 
-        <div className="featuredH2"> 
-        <img src={forOfor} alt="logo" width="100px"/>  
-          {/* <h2> 404 Oops! </h2> */}
-
-        </div> 
-      </div>
-      <div className="featured-right featuredRight-profile">
-            <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
-            <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
-                <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
-            </div>
-      </div>
-
-    );
+    return <PageNotFound/>
   }
 
   return (
@@ -81,10 +60,10 @@ const Profile = () => {
 
       <section className="homepageContentDivs featuredContainer">
         <div className="profileNavContainer">
-          <Link className="profileNav" to="/profile"> <img src={AllWorkoutsIcons} alt="weights" width="36px" />  workouts </Link>
-          <Link className="profileNav" to="/profile/myworkouts"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
-          <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px" />  add a workout </Link>
-          <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px" /> saved (coming soon) </h5>
+        <Link className="profileNav" to="/profile"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
+          <Link to="/profile/workout" className="profileNav"> <img src={AddWorkoutIcon} alt="heart" width="30px" />  add a workout </Link>
+          <Link className="comingSoon profileNav" to="/profile/livefeed"> <img src={GetAllWorkoutsIcon} alt="weights" width="36px" />  live feed </Link>
+          <h5 className="comingSoon profileNav"> <img src={ComingSoonIcon} alt="pin" width="30px" /> saved (coming soon) </h5>
         </div>
 
         {/* ------ */}

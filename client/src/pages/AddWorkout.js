@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_WORKOUT } from '../utils/mutations';
-import { QUERY_WORKOUTS, QUERY_ME } from '../utils/queries';
+import { QUERY_WORKOUTS, QUERY_ME} from '../utils/queries';
 
 import Auth from '../utils/auth';
 
@@ -64,6 +64,8 @@ const WorkoutForm = () => {
 	  setRepsState(" ")
 	  setWeightState(" ")
 	  setDescriptionState(" ")
+ 
+
     } catch (err) {
       console.error(err);
 	 
@@ -126,20 +128,12 @@ const WorkoutForm = () => {
 
 
 
-
-
   return (
+    
     <div className="pagesContainer">
 
       {Auth.loggedIn() ? (
         <>
-          {/* <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p> */}
           <form
             className="addWorkoutForm"
             onSubmit={handleFormSubmit} >
@@ -209,10 +203,12 @@ const WorkoutForm = () => {
             )}
         </>
       ) : (
+        <>
         <p>
           You need to be logged in to share your thoughts. Please{' '}
           <Link to="/login">login | signup </Link> 
         </p>
+        </>
       )}
     </div>
   );
