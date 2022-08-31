@@ -48,10 +48,12 @@ export const ADD_WORKOUT = gql`
   }
 `;
 
-// export const REMOVE_WORKOUT = gql`
-// mutation removeWorkout($workoutId: String!){removeWorkout(workoutId: $workoutId)}
-//   workoutId
-// `
 
+export const REMOVE_WORKOUT = gql`
+mutation removeWorkout($workoutId: String!){removeWorkout(workoutId: $workoutId)}
+{
+  workoutId
+}
+`
 
 
