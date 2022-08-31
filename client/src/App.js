@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Pages Imported 
 import Home from './pages/Home';
-import LoginSignUp from './pages/LoginSignup';
+import LoginSignUp from './pages/Login';
 import Profile from './pages/Profile';
 import AddWorkout from "./pages/AddWorkout";
 import PageNotFound from "./pages/404Page";

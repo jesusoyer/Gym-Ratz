@@ -7,7 +7,6 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 
 //css 
-
 import './pages-styles/profile.css'
 
 //importing 404 page

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundVideo from '../images/vertheader.mp4';
-import SignUp from '../pages/signUp'
+import SignUp from './SignUp'
 
-
+//css 
+import './pages-styles/forms.css'
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
@@ -67,13 +68,16 @@ return (
         <input className={isError ? 'error-input' : 'form-input'} placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/> </label>
 
         <button style={{ cursor: 'pointer' }} type="submit"> Login </button>
-    </form>
-    )}
-    {error && (
+       
+        {error && (
                 <div className="errorFormMess">
                     {error.message}
                 </div>
                 )}
+
+    </form>
+    )}
+
 
     </section>
     <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>

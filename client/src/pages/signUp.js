@@ -84,14 +84,16 @@ const Signup = () => {
                   >
                     Submit
                   </button>
-                </form>
-              )}
-  
-              {error && (
+
+                  {error && (
                 <div className="errorFormMess">
                   {error.message}
                 </div>
               )}
+              
+                </form>
+              )}
+  
 
       </section>
     );
