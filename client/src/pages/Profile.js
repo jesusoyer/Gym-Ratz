@@ -52,7 +52,7 @@ const Profile = () => {
       <div className="introProfileCard">
         <div className="helloUsername">
           <img src={Mikey} alt="logo" width="45px" />
-          <h2> Welcome Back, {userParam ? `${user.username}` : user.username}! </h2>
+          <h2 className="userNameData" > Welcome Back, <span> {userParam ? `${user.username}` : user.username}! </span> </h2>
           {/* once query works turn this on */}
         </div>
 
@@ -65,7 +65,7 @@ const Profile = () => {
         <div className="profileNavContainer">
         <Link className="profileNav" to="/profile"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
           <Link to="/profile/workout" className="profileNav"> <img src={AddWorkoutIcon} alt="heart" width="30px" />  add a workout </Link>
-          <Link className="comingSoon profileNav" to="/profile/livefeed"> <img src={GetAllWorkoutsIcon} alt="weights" width="36px" />  live feed </Link>
+          <Link className="comingSoon profileNav" to="/profile/livefeed"> <img src={GetAllWorkoutsIcon} alt="weights" width="36px" />  live feed (coming soon) </Link>
           <h5 className="comingSoon profileNav"> <img src={ComingSoonIcon} alt="pin" width="30px" /> saved (coming soon) </h5>
         </div>
 

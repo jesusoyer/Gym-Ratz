@@ -57,11 +57,63 @@
     display: flex;
   }
 
+/* Query cards  */
+
+.featured-right-home .mock-query-card {
+  width: 100%;
+}
+
+.mock-query-card {
+  border: 2px solid black;
+  padding: 50px;
+}
 
 
 /* MOBILE DESIGN */
 
 @media only screen and (max-width: 915px) { 
+
+  .userNameData {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .profileNav {
+    margin-right:0;
+  }
+
+  .profileNavContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mockQuery {
+    display: flex;
+    flex-direction: column;
+}
+
+.workoutCard {
+  width: 100%!important;
+}
+
+.workoutDataContainer {
+  display: flex;
+  flex-direction: column!important;
+  align-content: center!important;
+}
+
+/* Query cards  */
+
+.featured-right-home .mock-query-card {
+  width: 100%;
+}
+
+.mock-query-card {
+  border: 2px solid black;
+  padding: 50px;
+}
 
 
 }

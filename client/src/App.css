@@ -170,18 +170,6 @@ button {
   margin-left: 20px;
 }
 
-/* Query cards  */
-
-.featured-right-home .mock-query-card {
-  width: 100%;
-}
-
-.mock-query-card {
-  border: 2px solid black;
-  padding: 50px;
-}
-
-
 
 /* Our Story homepage */
 
@@ -234,7 +222,7 @@ background-position: center;
 }
 
 .typewriterContainer {
-  width: 100%;
+  width: 60%;
  text-align: center;
 }
 
@@ -296,7 +284,7 @@ background-position: center;
 
 /* Featured Workouts Homepage*/
 
-.featuredContainer {
+.featuredHomeContainer {
   background-color:rgba(172, 255, 131, 0.377);
   padding: 60px;
   margin-bottom: 0px;
@@ -307,18 +295,18 @@ background-position: center;
   padding: 5px;
 }
 
-.featuredWorkoutCard {
+.featuredHome {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.featuredWorkoutCard .Typewriter {
+.featuredHome .Typewriter {
   font-size: 20px;
   color: black!important;
 }
 
-.featured-left {
+.featured-left-home {
   width: 100%;
   text-align: center;
   background-color: white;
@@ -326,11 +314,11 @@ background-position: center;
   margin-bottom: 40px;
  }
 
-.featured-right {
+.featured-right-home {
   width: 100%;
 }
 
-.featured-right h2 {
+.featured-right-home h2 {
   margin-bottom: 25px;
   margin-left: 0px;
 }
