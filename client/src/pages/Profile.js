@@ -22,6 +22,7 @@ import Pin from '../images/cheese.png';
 import AllWorkoutsIcons from '../images/dumbbell.png'
 
 
+
 const Profile = () => {
 
   const { username: userParam } = useParams();
@@ -71,9 +72,9 @@ const Profile = () => {
 
       <section className="profileContainer">
         <div className="profileNavContainer">
-          <Link className="profileNav" to="/profile"> <img src={AllWorkoutsIcons} alt="weights" width="36px" />  workouts </Link>
-          <Link className="profileNav" to="/profile/myworkouts"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
-          <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px" />  add a workout </Link>
+          <Link className="profileNav" to="/profile"> <img src={Saved} alt="heart" width="30px" />  your workouts </Link>
+          <Link to="/profile/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px" />  add a workout </Link>
+          <Link className="comingSoon profileNav" to="/profile/livefeed"> <img src={AllWorkoutsIcons} alt="weights" width="36px" />  workouts </Link>
           <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px" /> saved (coming soon) </h5>
         </div>
 
