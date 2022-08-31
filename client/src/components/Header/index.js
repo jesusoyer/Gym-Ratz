@@ -30,8 +30,7 @@ const Header = () => {
         ) : ( 
         <>
 
-        {/* <a href="#mission"> mission </a> */}
-        <Link to="/"> our mission</Link>
+        <a href="/home/#mission"> our mission </a>
         <Link to="login"> login + register </Link>
         
         </>

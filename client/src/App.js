@@ -24,6 +24,7 @@ import Footer from './components/Footer';
 import WorkoutList from "./components/WorkoutList";
 import MyWorkouts from "./components/MyWorkouts";
 import WorkoutForm from "./pages/AddWorkout";
+import OurMission from "./components/Our Mission";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -58,7 +59,9 @@ function App() {
 
   {/* dynamic pages */}
   <Routes> 
-    <Route path="/" element={<Home/>}/>
+    <Route path="/" element={<Home/>}> 
+      <Route path="#mission" element={<OurMission/>}/>
+    </Route>
     <Route path="/home" element={<Home/>}/>
     <Route path="/login" element={<LoginSignUp/>}/>
     <Route path="/workout" element={<AddWorkout/>}/>
