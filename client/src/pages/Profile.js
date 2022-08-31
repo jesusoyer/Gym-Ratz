@@ -21,9 +21,6 @@ import AddIcon from '../images/pencil.png';
 import Pin from '../images/cheese.png';
 import AllWorkoutsIcons from '../images/dumbbell.png'
 
-//404 
-import forOfor from '../images/error-404.png'
-
 
 const Profile = () => {
 
@@ -51,25 +48,7 @@ const Profile = () => {
   }
 
   if (!user.username) {
-    return (
-      
-      <div className="featuredWorkoutCard-profile"> 
-      
-      <div className="featured-left"> 
-        <div className="featuredH2"> 
-        <img src={forOfor} alt="logo" width="100px"/>  
-          {/* <h2> 404 Oops! </h2> */}
-
-        </div> 
-      </div>
-      <div className="featured-right featuredRight-profile">
-            <Link className="profileNav" to="/myworkouts"> <img src={Saved} alt="heart" width="30px"/>  your workouts </Link>
-            <Link to="/workout" className="profileNav"> <img src={AddIcon} alt="heart" width="30px"/>  add a workout </Link>
-                <h5 className="comingSoon profileNav"> <img src={Pin} alt="pin" width="30px"/> saved (coming soon) </h5>
-            </div>
-      </div>
-
-    );
+    return <PageNotFound/>
   }
 
   return (
