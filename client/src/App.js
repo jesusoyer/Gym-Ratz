@@ -22,6 +22,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WorkoutList from "./components/WorkoutList";
 import MyWorkouts from "./components/MyWorkouts";
+import WorkoutForm from "./pages/AddWorkout";
+import OurMission from "./components/Our Mission";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
