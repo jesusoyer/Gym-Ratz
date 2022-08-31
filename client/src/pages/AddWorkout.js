@@ -1,140 +1,225 @@
 import React, { useState } from 'react';
-import '../styles/Workout.css';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 
-// const tempAuthor = "test#3"
+import { ADD_WORKOUT } from '../utils/mutations';
+import { QUERY_WORKOUTS, QUERY_ME} from '../utils/queries';
 
-// const exerciseFormValues = [{ title: '', sets: '', reps: '', weight: '', other: '' }]
-// const workoutFormValues = [{workoutTitle: '', workoutAuthor: tempAuthor}]
+import Auth from '../utils/auth';
 
-const Form = () => {
-	// array of forms containing set, reps, and weights
-<<<<<<< HEAD
-	const [newForm, setNewForm] = useState([{ sets: '', reps: '', weight: '' }]);
-=======
-	const [newForm, setNewForm] = useState( [{title: '', sets: '', reps: '', weight: '', other: ''}] );
-	const [newTitle, setNewTitle] = useState('')
+const WorkoutForm = () => {
+  const [workoutTitle, setWorkoutTitle] = useState(" ");
+  const [exerciseType, setExerciseState] = useState (" ");
+  const [sets, setSetsState]= useState(" ");
+  const [reps, setRepsState] = useState (" ");
+  const [weight, setWeightState]= useState(" ")
+  const [description, setDescriptionState]= useState (" ")
+  
 
-	const handleWorkoutTitle = (e) => {
-		const { target } = e;
-		// const inputType = target.name; // get all forms from state
-		const inputValue = target.value;
-		// title[index]= e.target.value; // assign the value of the sets input to key of the specified form at index
-		if (target.name = 'workoutTitle'){
-			setNewTitle(inputValue);
-		}
-		 // set form array with new sets value
-	};
-	
-	const handleTitle = (e, index) => {
-		const form = [...newForm]; // get all forms from state
-		form[index]['title'] = e.target.value; // assign the value of the sets input to key of the specified form at index
-		setNewForm(form); // set form array with new sets value
-	};
->>>>>>> 200ffd3dcacc52c130eebf27ee91ac6334430a39
+//   const [characterCount, setCharacterCount] = useState(0);
 
-	// handle inputs for sets
-	const handleSets = (e, index) => {
-		const form = [...newForm]; // get all forms from state
-		form[index]['sets'] = e.target.value; // assign the value of the sets input to key of the specified form at index
-		setNewForm(form); // set form array with new sets value
-	};
+  const [addWorkout, { error}] = useMutation(ADD_WORKOUT, {
+    update(cache, { data: { addWorkout } }) {
+      try {
+        const { workouts } = cache.readQuery({ query: QUERY_WORKOUTS });
+		console.log(workouts)
 
-	// handle inputs for reps
-	const handleReps = (e, index) => {
-		const form = [...newForm];
-		form[index]['reps'] = e.target.value; // assign the value of the reps input to key of the specified form at index
-		setNewForm(form); // set form array with new reps value
-	};
 
-	// handle inputs for weights
-	const handleWeight = (e, index) => {
-		const form = [...newForm];
-		form[index]['weight'] = e.target.value; // assign the value of the weights input to key of the specified form at index
-		setNewForm(form); // set form array with new weights value
-	};
+        cache.writeQuery({
+          query: QUERY_WORKOUTS,
+          data: { workouts: [addWorkout, ...workouts] },
+        });
+      } catch (e) {
+        console.error(e);
+		console.log("you errored out")
+      }
 
-	// removes a form of exercises
-	const handleRemove = (index) => {
-		const form = [...newForm];
-		form.splice(index, 1); // delete form at index, 1 time
-		setNewForm(form); // set new form array to account for deletion
-	};
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, workouts: [...me.workouts, addWorkout] } },
+      }); console.log("me is hit")
+    },
+  });
 
-	// adds a new form for new exercises
-	const handleAdd = () => {
-<<<<<<< HEAD
-		setNewForm([...newForm, { title: '', sets: '', reps: '', weight: '', other: '' }]); // set a new form to form state array
-=======
-		setNewForm([...newForm, {title: '', sets: '', reps: '', weight: '', other: ''}]); // set a new form to form state array
->>>>>>> 200ffd3dcacc52c130eebf27ee91ac6334430a39
-	};
+//error state for color change of inputs
+const [isError, setErrorState] = useState(false);
 
-	// log data to console or hgowever we are returning the data
-	const handleSubmit = () => {
-		console.log(newTitle);
-		newForm.forEach((item) => {
-			console.log(item);
-		});
-	};
 
-	return (
-		<>
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-			<h1>Welcome Back, Michael!</h1>
-			<p>Enter your exercises for today:</p>
-			<div className='formContainment'>
-			<label>Title</label>
+    try {
+      const { data } = await addWorkout({
+        variables: {
+          workoutTitle,
+		  exerciseType,
+		  sets,
+		  reps,
+		  weight,
+		  description,
+          workoutAuthor: Auth.getProfile().data.username,
+        },
+      });
+
+      setWorkoutTitle(" ");
+	  setExerciseState(" ")
+	  setSetsState(" ")
+	  setRepsState(" ")
+	  setWeightState(" ")
+	  setDescriptionState(" ")
+ 
+
+    } catch (err) {
+      console.error(err);
+    //setting error state for color change of inputs
+    setErrorState(true)
+    console.log(setErrorState)
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'workoutTitle' && value.length <= 280) {
+      setWorkoutTitle(value);
+    //   setCharacterCount(value.length);
+    }
+  };
+  const handleExerciseChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'exerciseType' && value.length <= 280) {
+      setExerciseState(value);
+    //   setCharacterCount(value.length);
+    }
+  };
+
+  const handleSetsChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'sets' && value.length <= 280) {
+      setSetsState(value);
+    //   setCharacterCount(value.length);
+    }
+  };
+
+
+  const handleRepsChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'reps' && value.length <= 280) {
+      setRepsState(value);
+    //   setCharacterCount(value.length);
+    }
+  };
+
+  const handleWeightChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'weight' && value.length <= 280) {
+      setWeightState(value);
+    //   setCharacterCount(value.length);
+    }
+  };
+
+  const handleDescriptionChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'description' && value.length <= 280) {
+      setDescriptionState(value);
+    //   setCharacterCount(value.length);
+    }
+  };
+
+
+
+  return (
+    
+    <div className="pagesContainer">
+
+      {Auth.loggedIn() ? (
+        <>
+          <form
+            className="addWorkoutForm"
+            onSubmit={handleFormSubmit} >
+
+          <h2> Add A Workout </h2>
+          
+        <div className="workoutFormContainer">
+				<label> What is your workouts name?
+              <input
+                name="workoutTitle"
+                placeholder="Here's a new thought..."
+                value={workoutTitle}
+                className={isError ? 'error-input' : 'form-input'}
+                onChange={handleChange}
+              /></label>
+					<label> Why type of exercise will you be doing?
+			      <input
+                name="exerciseType"
+                placeholder="exercise type"
+                value={exerciseType}
+                className={isError ? 'error-input' : 'form-input'}
+                onChange={handleExerciseChange}
+              /></label>
+				<label> How many sets? If none type n/a.
+			    <input
+                name="sets"
+                placeholder="sets"
+                value={sets}
+                className={isError ? 'error-input' : 'form-input'}
+                onChange={handleSetsChange}
+              /></label>
+				<label> How many reps? If none type n/a.
 				<input
-					type="text"
-					name="workoutTitle"
-					placeholder="Enter title"
-					onChange={handleWorkoutTitle}
-					value={newTitle}
-					required
-								/>
-				{newForm.map((input, index) => {
-					return (
-						
-						<div className="box" key={index}>
-							<p>Exercise {index + 1}</p>
-							<form>
-								<label>Sets</label>
-								<input
-									type="text"
-									key="sets"
-									value={input.sets}
-									onChange={(e) => handleSets(e, index)}
-								/>
-								<label>Reps</label>
-								<input
-									type="text"
-									key="reps"
-									value={input.reps}
-									onChange={(e) => handleReps(e, index)}
-								/>
-								<label>Weight</label>
-								<input
-									type="text"
-									key="weight"
-									value={input.weight}
-									onChange={(e) => handleWeight(e, index)}
-								/>
-							</form>
-							<div className='btnContainer'>
-								{newForm.length !== 1 && (
-									<button onClick={() => handleRemove(index)}>Remove</button>
-								)}
-								{newForm.length - 1 === index && (
-									<button onClick={handleAdd}>Add</button>
-								)}
-							</div>
-						</div>
-					);
-				})}
-				<button onClick={handleSubmit}>Submit</button>
-			</div>
-		</>
-	);
+                name="reps"
+                placeholder="reps"
+                value={reps}
+                className={isError ? 'error-input' : 'form-input'}
+                onChange={handleRepsChange}
+              /></label>
+				<label> How much weight? If none type n/a.
+				<input	
+                name="weight"
+                placeholder="weight"
+                value={weight}
+                className={isError ? 'error-input' : 'form-input'}
+                onChange={handleWeightChange}
+              /></label>
+				<label> Workout tips/tricks and information.
+				<input	
+                name="description"
+                placeholder="description"
+                value={description}
+                className={isError ? 'error-input' : 'form-input'}
+                onChange={handleDescriptionChange}
+              /></label>
+
+            </div>
+              <button style={{ cursor: 'pointer' }} type="submit">
+                Add Workout
+              </button>
+
+              {error && (
+              <div className="errorFormMess">
+                {error.message}
+              </div>
+            )}
+          </form>
+
+        </>
+      ) : (
+        <>
+        <p>
+          You need to be logged in to share your thoughts. Please{' '}
+          <Link to="/login">login | signup </Link> 
+        </p>
+        </>
+      )}
+    </div>
+  );
 };
 
-export default Form;
+export default WorkoutForm;

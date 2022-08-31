@@ -44,49 +44,12 @@
     text-align: center;
 }
 
-/* form buttons */
 button {
   border: 2px solid black;
   padding: 10px;
   background-color: transparent;
-  width: 100%;
   text-decoration: none;
   color: black;
-}
-
-
-
-/* Navigation Styling */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px 20px 20px;
-  align-items: center;
-}
-
-.navLinks {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  padding: 20px;
-}
-
-.navLinks a {
-  margin-right: 15px;
-  color: black;
-
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-  margin-left: 10px;
-}
-
-.logo h2 {
-  padding-right: 0px;
 }
 
 /* Home Page Styling  */
@@ -174,20 +137,16 @@ nav {
 
 /* Featured Workouts Homepage*/
 
-.featuredContainer {
+.featuredHomeContainer {
   background-color:rgba(172, 255, 131, 0.377);
   padding: 60px;
-  /* background-image: url('./images/boxing-gloves.png');
-  background-size: 70px;
-  background-position:  0 0;
-  background-repeat:no-repeat; */
 }
 
 .featuredH2 h2 {
   padding: 5px;
 }
 
-.featuredWorkoutCard {
+.featuredHome {
   display: flex;
   align-items: baseline;
 }
@@ -195,114 +154,20 @@ nav {
   transform: scaleX(-1);
 }
 
-.featured-left {
-  width: 50%;
+.featured-left-home {
   text-align: center;
   background-color: white;
-  padding: 50px;
+  padding: 60px;
+  width: 50%;
  }
 
-.featured-right {
+.featured-right-home {
   width: 50%;
 }
 
-.featured-right h2 {
+.featured-right-home h2 {
   margin-bottom: 20px;
   margin-left: 20px;
-}
-
-/* profile version */
-
-.introProfileCard {
-  display: flex;
-  flex-direction: column;
-}
-
-.helloUsername{
-  display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.splinterQuote {
-  width: 60%;
-  margin: auto;
-  margin-bottom: 60px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.splinterQuote h3  {
-  font-style: italic;
-  color: #999999;
-  margin-bottom: 10px;
-}
-
-.featuredWorkoutCard-profile {
-  display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.profileNavContainer {
-  padding: 20px;
-  display: flex;
-}
-
-.profileNav {
-  display: flex;
-  margin-right: 30px;
-  margin-bottom: 10px;
-  align-items: center;
-}
-
-.profileNav img {
-  margin-right: 10px;
-}
-
-.liveFeed {
-  display: flex;
-}
-
-/* Query cards  */
-
-/* homepage version */
-.featured-right .queryCards {
-  width: 100%;
-}
-/* profile page */
-.queryCards {
-  width: 30%;
-  border: 2px solid black;
-  padding: 50px;
-  margin: 15px;
-}
-
-.queriesCardHomepage {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.queryCardUsername {
-  margin-top: 10px;
-}
-
-.exerciseDataContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.exerciseCard {
-  margin-top: 10px;
-}
-
-.exerciseMiniCard {
-  display: flex;
-}
-
-.exerciseMiniCard li {
-  padding-right: 10px ;
 }
 
 
@@ -328,39 +193,175 @@ background-position: center;
 }
 
 
-/* Footer Styling */
+/* MOBILE DESIGN */
 
-footer {
+@media only screen and (max-width: 915px) { 
+
+  /* inherited react logo animations edits */
+
+  .App-logo {
+      height: 15vmin;
+      animation: none;
+      margin-bottom: 10px;
+  }
+
+/* Universal Pages Containers  */
+.pagesContainer {
+  max-width: 950px;
+  margin:auto;
+}
+
+
+/* Home Page Styling  */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.typewriterContainer {
+  width: 60%;
+ text-align: center;
+}
+
+.contentHeader {
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 80%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  margin-left: 20px;
+  margin-right:20px;
+}
+
+.contentItems {
+    width: 100%;
+}
+
+.homepageVideo {
+  position: absolute;
+  z-index: -1;
+  /* width: 75%; */
+  top: -10%;
+  left: 0;
+}
+
+.homepageContentDivs:first-child {
+  background-color: white;
+  margin-top: 0px;
+  border-top:none;
+  border-left:none;
+}
+
+.homepageContentDivs {
+  margin-bottom: 60px;
+  padding: 50px;
+  /* border: black 3px solid; */
+}
+
+.codeSpan {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  background-color: black;
+  color: white;
+}
+
+.ctaHomepage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ctaHomepage a {
+  border-bottom: none;
+  margin-top:20px;
+}
+
+/* Featured Workouts Homepage*/
+
+.featuredHomeContainer {
+  background-color:rgba(172, 255, 131, 0.377);
+  padding: 60px;
+  margin-bottom: 0px;
+
+}
+
+.featuredH2 h2 {
+  padding: 5px;
+}
+
+.featuredHome {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 25px;
-}
-footer img {
-  width: 50px;
+  flex-direction: column;
 }
 
-.footerItem {
-  margin: 10px;
+.featuredHome .Typewriter {
+  font-size: 20px;
+  color: black!important;
+}
+
+.featured-left-home {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 40px;
+ }
+
+.featured-right-home {
+  width: 100%;
+}
+
+.featured-right-home h2 {
+  margin-bottom: 25px;
+  margin-left: 0px;
+}
+
+/* Our Story homepage */
+
+.imgContent50Homepage {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+}
+
+.gymImgHomepage {
+width: 100%;
+background-image: url('./images/gymstock1.jpg');
+background-size: cover; 
+background-position: center;
+background-color: pink;
+height: 80vh;
+}
+
+.ourStoryP {
+  padding: 60px;
+  width: 100%;
 }
 
 /* Login | Register Form Styling  */
 
 .formsContainerFlex {
   display: flex;
-  justify-content: space-evenly;
-  justify-content: center;
-  height: 75vh;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  margin: 40px;
 }
 
 .mainFormContainer {
-width: 50%;
+width: 100%;
+margin-bottom: 20px;
 }
 
 .videoHeader {
-  z-index: -1;
-  margin-right: 10px;
-   margin-left: 10px;
+  display: none;
  }
 
 .loginForm, .signupForm {
@@ -384,20 +385,4 @@ width: 50%;
   border: 1px solid black;
 }
 
-.errorFormMess {
-  position: absolute;
-  position: absolute;
-  bottom: 11%;
-  background-color:rgb(172, 255, 131);
-  padding: 20px;
-  border: 2px solid black;
 }
-
-.error-input {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 2px solid red;
-}
-

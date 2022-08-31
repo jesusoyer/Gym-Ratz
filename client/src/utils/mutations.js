@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-console.log('You are in mutations')
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -34,28 +34,26 @@ export const ADD_USER = gql`
 
 
 export const ADD_WORKOUT = gql`
-
-   mutation addWorkout($workout: WorkoutInput) {
-        addWorkout(workout: $workout){
-
-            _id
-            workoutAuthor
-            workoutTitle
-            exercises {
-                _id
-
-                title
-                sets
-                reps
-                weight
-
-                other
-            }
-        }
-   }
-
-
+  mutation addWorkout($workoutTitle: String!, $workoutAuthor: String!, $exerciseType: String!, $sets: String!, $reps: String!, $weight: String!, $description: String!) {
+    addWorkout(workoutTitle: $workoutTitle, workoutAuthor: $workoutAuthor, exerciseType: $exerciseType, sets: $sets, reps: $reps, weight: $weight, description: $description) {
+      _id
+      workoutTitle
+      workoutAuthor
+      exerciseType
+      sets
+      reps
+      weight
+      description
+    }
+  }
 `;
 
+
+export const REMOVE_WORKOUT = gql`
+mutation removeWorkout($workoutId: String!){removeWorkout(workoutId: $workoutId)}
+{
+  workoutId
+}
+`
 
 

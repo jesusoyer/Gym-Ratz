@@ -13,14 +13,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Pages Imported 
 import Home from './pages/Home';
-import LoginSignUp from './pages/LoginSignup';
+import LoginSignUp from './pages/Login';
 import Profile from './pages/Profile';
 import AddWorkout from "./pages/AddWorkout";
 
 //Components Imported
 import Header from './components/Header';
 import Footer from './components/Footer';
-import WorkoutList from "./components/WorkoutList";
+import WorkoutList from "./components/LiveFeed";
 import MyWorkouts from "./components/MyWorkouts";
 
 const httpLink = createHttpLink({
@@ -38,7 +38,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-
+const cache = new InMemoryCache();
 const client = new ApolloClient({
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
   link: authLink.concat(httpLink),
@@ -56,17 +56,23 @@ function App() {
 
   {/* dynamic pages */}
   <Routes> 
-    <Route path="/" element={<Home/>}/>
+    <Route path="/" element={<Home/>}> 
+      <Route path="#mission" element={<OurMission/>}/>
+    </Route>
+    <Route path="/home" element={<Home/>}/>
     <Route path="/login" element={<LoginSignUp/>}/>
     {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
     <Route path="/register" element={<LoginSignUp/>}/>
     <Route path="/workout" element={<AddWorkout/>}/>
     <Route path="/profile" element={<Profile/>}>
-      <Route path="" element={<WorkoutList/>}/>
-      <Route path="myworkouts" element={<MyWorkouts/>}/>
+      <Route path="" element={<MyWorkouts/>}/>
+      <Route path="livefeed" element={<WorkoutList/>}/>
+      <Route path="workout" element={<WorkoutForm/>}/>
     </Route>
     <Route path="/me" element={<Profile />} />
-    <Route path="/profiles/:username"element={<Profile />}/>
+    <Route path="/profile/:username"element={<Profile />}/>
+    <Route path="/404" element={<PageNotFound/>} />
+    <Route path="*" element={<PageNotFound/>}/>
   </Routes>
   
   {/* footer is static  */}

@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundVideo from '../images/vertheader.mp4';
-import SignUp from '../pages/signUp'
+import SignUp from './signUp'
 
-
+//css 
+import './pages-styles/forms.css'
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import { set } from 'mongoose';
 
 const Login = (props) => {
         const [formState, setFormState] = useState({ email:'', password:''});
         const [login, {error, data}] = useMutation( LOGIN_USER);
 
+        //error state for color change of inputs
         const [isError, setErrorState] = useState(false);
     
         //update state based on from input changes
@@ -37,6 +40,7 @@ const Login = (props) => {
         } catch (e) {
             console.error(e);
 
+    //setting error state for color change of inputs
             setErrorState(true)
             console.log(setErrorState)
         }
@@ -45,7 +49,10 @@ const Login = (props) => {
             email: '',
             password: '',
           });
+
     };
+
+
 
 return (
 //react form goes here
@@ -60,6 +67,7 @@ return (
 
     <form onSubmit= {handleFormSubmit} className="loginForm" >
     <h2> Login </h2>
+
         <label> Email: 
         <input className={isError ? 'error-input' : 'form-input'} placeholder="email" name="email" type="email" value={formState.email} onChange={handleChange}/>
         </label>
@@ -67,14 +75,18 @@ return (
         <input className={isError ? 'error-input' : 'form-input'} placeholder="*******" name="password" type="password" value={formState.password} onChange={handleChange}/> </label>
 
         <button style={{ cursor: 'pointer' }} type="submit"> Login </button>
+        
+        {error && (
+        <div className="errorFormMess">
+            {error.message}
+        </div>
+        )}
     </form>
-    )}
-    {error && (
-                <div className="errorFormMess">
-                    {error.message}
-                </div>
-                )}
+    )}     
     </section>
+
+
+
     <video className="videoHeader" autoPlay muted loop> <source src={backgroundVideo} type="video/mp4"/> </video>
     <SignUp/>
 </main>
