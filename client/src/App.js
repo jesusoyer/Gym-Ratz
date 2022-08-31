@@ -16,7 +16,7 @@ import Home from './pages/Home';
 import LoginSignUp from './pages/Login';
 import Profile from './pages/Profile';
 import AddWorkout from "./pages/AddWorkout";
-
+import PageNotFound from "./pages/404Page"
 //Components Imported
 import Header from './components/Header';
 import Footer from './components/Footer';
