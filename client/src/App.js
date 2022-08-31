@@ -12,6 +12,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Pages Imported 
+import PageNotFound from "./pages/404Page";
 import Home from './pages/Home';
 import LoginSignUp from './pages/Login';
 import Profile from './pages/Profile';
@@ -24,6 +25,10 @@ import WorkoutList from "./components/LiveFeed";
 import MyWorkouts from "./components/MyWorkouts";
 import WorkoutForm from "./pages/AddWorkout";
 import OurMission from "./components/Our Mission";
+
+import WorkoutForm from "./pages/AddWorkout";
+import OurMission from "./components/OurMission";
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -58,10 +63,11 @@ function App() {
 
   {/* dynamic pages */}
   <Routes> 
-    <Route path="/" element={<Home/>}> 
+    <Route path="/home" element={<Home/>}> 
       <Route path="#mission" element={<OurMission/>}/>
     </Route>
     <Route path="/home" element={<Home/>}/>
+    <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<LoginSignUp/>}/>
     {/* seperated the register link but going to the same path/page as login. 2 forms one page */}
     <Route path="/register" element={<LoginSignUp/>}/>
