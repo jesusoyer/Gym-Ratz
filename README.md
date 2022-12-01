@@ -45,3 +45,4 @@ In Phase 1 of our project you will be able to see authentication, GET/POST worko
 * Mason Magalaland
 * Laiko Cayanan
 
+Thank you for visiting our website!
