@@ -40,8 +40,8 @@ In Phase 1 of our project you will be able to see authentication, GET/POST worko
 ## Contributors
 
 * Bexi Castillo
-* Eric Ruboneka
 * Jesus Oyervides
+* Eric Ruboneka
 * Mason Magalaland
 * Laiko Cayanan
 
